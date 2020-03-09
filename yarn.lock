@@ -1568,6 +1568,23 @@
     react-inspector "^4.0.0"
     uuid "^3.3.2"
 
+"@storybook/addon-design-assets@^5.3.14":
+  version "5.3.14"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-design-assets/-/addon-design-assets-5.3.14.tgz#e5503b8ecde8e723eb105801557d1779e598c268"
+  integrity sha512-yQ35jCWOFl3+gh/TJcam/y41/yLvzS+93zmv5AB8G721LBaLNNWDoIi8spv5jt0qm7WfOMsjidahcwsVAOUHNA==
+  dependencies:
+    "@storybook/addons" "5.3.14"
+    "@storybook/api" "5.3.14"
+    "@storybook/client-logger" "5.3.14"
+    "@storybook/components" "5.3.14"
+    "@storybook/core-events" "5.3.14"
+    "@storybook/theming" "5.3.14"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    react "^16.8.3"
+    ts-dedent "^1.1.0"
+    use-image "^1.0.3"
+
 "@storybook/addon-docs@^5.3.14":
   version "5.3.14"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.14.tgz#4c12d24bb035482749aeb16476bdf09dd8ddcef9"
@@ -13427,6 +13444,11 @@ use-callback-ref@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.1.tgz#898759ccb9e14be6c7a860abafa3ffbd826c89bb"
   integrity sha512-C3nvxh0ZpaOxs9RCnWwAJ+7bJPwQI8LHF71LzbQ3BvzH5XkdtlkMadqElGevg5bYBDFip4sAnD4m06zAKebg1w==
+
+use-image@^1.0.3:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/use-image/-/use-image-1.0.5.tgz#51fa23fe705c3ad0d4ae3eca6cf636551c591693"
+  integrity sha512-tv1tHn1GRcbrifNzCPAN81Z1Fayfd3GXkUDFx0/dUkqqPmADNDRoCyT9MqrUX9GPcofsQl6SREPr9Zavm3dRTQ==
 
 use-sidecar@^1.0.1:
   version "1.0.2"

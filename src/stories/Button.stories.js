@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { action } from "@storybook/addon-actions";
+import React from 'react';
+import styled from 'styled-components';
+import { action } from '@storybook/addon-actions';
 
-import { Button as BaseButton } from "../components/Button";
-import { Icon } from "../components/Icon";
-import { StoryLinkWrapper } from "../StoryLinkWrapper";
-import { spacing } from "../shared/styles";
+import { Button as BaseButton } from '../components/Button';
+import { Icon } from '../components/Icon';
+import { StoryLinkWrapper } from '../StoryLinkWrapper';
+import { spacing } from '../shared/styles';
 
 const Button = styled(BaseButton)`
   margin: ${spacing.margin.small};
@@ -20,12 +20,17 @@ const CustomButton = styled.button`
 `;
 
 function ButtonWrapper(props) {
-  return <CustomButton onClick={action("button action click")} {...props} />;
+  return <CustomButton onClick={action('button action click')} {...props} />;
 }
 
 export default {
-  title: "Design System|Button",
-  component: Button
+  title: 'Design System|Button',
+  component: Button,
+  parameters: {
+    assets: [
+      'https://xd.adobe.com/embed/346520e5-a8ad-4e03-4f64-b3afb2a77ff2-4254/',
+    ],
+  },
 };
 
 export const allButtons = () => (
@@ -82,7 +87,7 @@ export const allButtons = () => (
 );
 
 allButtons.story = {
-  name: "all buttons"
+  name: 'all buttons',
 };
 
 export const buttonWrapper = () => (
@@ -168,7 +173,7 @@ export const buttonWrapper = () => (
 );
 
 buttonWrapper.story = {
-  name: "button wrapper"
+  name: 'button wrapper',
 };
 
 export const anchorWrapper = () => (
@@ -333,5 +338,5 @@ export const anchorWrapper = () => (
 );
 
 anchorWrapper.story = {
-  name: "anchor wrapper"
+  name: 'anchor wrapper',
 };
