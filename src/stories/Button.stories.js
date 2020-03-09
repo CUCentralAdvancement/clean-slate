@@ -2,14 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
-import { Button as BaseButton } from '../components/Button';
+import { Button } from '../components/Button';
 import { Icon } from '../components/Icon';
 import { StoryLinkWrapper } from '../StoryLinkWrapper';
-import { spacing } from '../shared/styles';
-
-const Button = styled(BaseButton)`
-  margin: ${spacing.margin.small};
-`;
 
 const CustomButton = styled.button`
   border: 1px solid green;
