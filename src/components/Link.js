@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
-import { darken } from "polished";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { darken } from 'polished';
 
-import { Icon } from "./Icon";
-import { color } from "../shared/styles";
+// import { Icon } from "./Icon";
+import { color } from '../shared/styles';
 
 const linkStyles = css`
   display: inline-block;
@@ -147,16 +147,9 @@ const LinkButton = styled.button`
 const applyStyle = LinkWrapper => {
   return (
     LinkWrapper &&
-    styled(
-      ({
-        containsIcon,
-        inverse,
-        nochrome,
-        secondary,
-        tertiary,
-        ...linkWrapperRest
-      }) => <LinkWrapper {...linkWrapperRest} />
-    )`
+    styled(({ containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
+      <LinkWrapper {...linkWrapperRest} />
+    ))`
       ${linkStyles};
     `
   );
@@ -168,10 +161,7 @@ const applyStyle = LinkWrapper => {
 export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
   const content = (
     <Fragment>
-      <LinkInner withArrow={withArrow}>
-        {children}
-        {withArrow && <Icon icon="arrowright" />}
-      </LinkInner>
+      <LinkInner withArrow={withArrow}>{children}</LinkInner>
     </Fragment>
   );
 
@@ -191,22 +181,20 @@ Link.propTypes = {
   isButton: PropTypes.bool,
   children: PropTypes.node,
   withArrow: PropTypes.bool,
-  containsIcon: PropTypes.bool,
   LinkWrapper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   inverse: PropTypes.bool,
   nochrome: PropTypes.bool,
   secondary: PropTypes.bool,
-  tertiary: PropTypes.bool
+  tertiary: PropTypes.bool,
 };
 
 Link.defaultProps = {
   isButton: false,
   children: null,
   withArrow: false,
-  containsIcon: false,
   LinkWrapper: undefined,
   inverse: false,
   nochrome: false,
   secondary: false,
-  tertiary: false
+  tertiary: false,
 };

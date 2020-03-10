@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from '../components/Button';
-import { Icon } from '../components/Icon';
 import { StoryLinkWrapper } from '../StoryLinkWrapper';
 
 const CustomButton = styled.button`
@@ -19,7 +18,7 @@ function ButtonWrapper(props) {
 }
 
 export default {
-  title: 'Design System|Button',
+  title: 'Components|Button',
   component: Button,
   parameters: {
     assets: ['https://xd.adobe.com/embed/346520e5-a8ad-4e03-4f64-b3afb2a77ff2-4254/'],
@@ -32,26 +31,8 @@ export const allButtons = () => (
     <Button appearance="secondary">Secondary</Button>
     <Button appearance="tertiary">Tertiary</Button>
     <Button appearance="outline">Outline</Button>
-    <Button appearance="primaryOutline">Outline primary</Button>
-    <Button appearance="secondaryOutline">Outline secondary</Button>
     <Button appearance="primary" isDisabled>
       Disabled
-    </Button>
-    <br />
-    <Button appearance="primary" isLoading>
-      Primary
-    </Button>
-    <Button appearance="secondary" isLoading>
-      Secondary
-    </Button>
-    <Button appearance="tertiary" isLoading>
-      Tertiary
-    </Button>
-    <Button appearance="outline" isLoading>
-      Outline
-    </Button>
-    <Button appearance="outline" isLoading loadingText="Custom...">
-      Outline
     </Button>
     <br />
     <Button appearance="primary" size="small">
@@ -69,18 +50,11 @@ export const allButtons = () => (
     <Button appearance="primary" isDisabled size="small">
       Disabled
     </Button>
-    <Button appearance="outline" size="small" containsIcon>
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-    <Button appearance="outline" size="small">
-      <Icon icon="link" />
-      Link
-    </Button>
   </div>
 );
 
 allButtons.story = {
-  name: 'all buttons',
+  name: 'All Buttons',
 };
 
 export const buttonWrapper = () => (
@@ -140,18 +114,11 @@ export const buttonWrapper = () => (
     <Button ButtonWrapper={ButtonWrapper} appearance="primary" isDisabled size="small">
       Disabled
     </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="outline" size="small" containsIcon>
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="outline" size="small">
-      <Icon icon="link" />
-      Link
-    </Button>
   </div>
 );
 
 buttonWrapper.story = {
-  name: 'button wrapper',
+  name: 'With Action',
 };
 
 export const anchorWrapper = () => (
@@ -223,22 +190,9 @@ export const anchorWrapper = () => (
     >
       Disabled
     </Button>
-    <Button
-      ButtonWrapper={StoryLinkWrapper}
-      appearance="outline"
-      size="small"
-      containsIcon
-      href="http://storybook.js.org"
-    >
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="outline" size="small" href="http://storybook.js.org">
-      <Icon icon="link" />
-      Link
-    </Button>
   </div>
 );
 
 anchorWrapper.story = {
-  name: 'anchor wrapper',
+  name: 'As Link',
 };

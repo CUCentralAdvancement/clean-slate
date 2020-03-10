@@ -1,10 +1,18 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Button } from '../components/Button';
 
-<Meta title="Design System|Introduction" />
+<Meta title="Introduction|Welcome" />
 
-# Introduction to the Learn Storybook design system
+# Office of Advancement Component Library
 
-The Learn Storybook design system is a subset of the full [Storybook design system](https://github.com/storybookjs/design-system/),
-created as a learning resource for those interested in learning how to write and publish a design system using best practice techniques.
+This site will host the component library used in applications for the Office of Advancement at the University of Colorado.
 
-Learn more at [Learn Storybook](https://learnstorybook.com).
+It is built with Storybook...
+
+Here is a preview of the Button component.
+
+<Preview>
+  <Story name="negative">
+    <Button appearance="primary">Primary</Button>
+  </Story>
+</Preview>
