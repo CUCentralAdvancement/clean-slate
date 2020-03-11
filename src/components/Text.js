@@ -8,21 +8,25 @@ const ELEMENTS = {
   PARAGRAPH: 'p',
 };
 
-export function Text({ As, children }) {
+export function Text({ As, children, styles }) {
   let content = '';
   if (As === 'p') {
-    content = <p>{children}</p>;
+    content = <p style={styles}>{children}</p>;
   } else if (As === 'span') {
-    content = <span>{children}</span>;
+    content = <span style={styles}>{children}</span>;
+  } else if (As === 'blockquote') {
+    content = <blockquote style={styles}>{children}</blockquote>;
   }
 
   return content;
 }
 
-Text.PropTypes = {
+Text.propTypes = {
   as: PropTypes.oneOf(Object.values(ELEMENTS)),
+  styles: PropTypes.object,
 };
 
-Text.DefaultProps = {
+Text.defaultProps = {
   as: ELEMENTS.SPAN,
+  styles: {},
 };

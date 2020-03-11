@@ -3,14 +3,14 @@ import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 
 export default {
-  title: 'Components|Forms|Login',
+  title: 'Molecules|Login Form',
   component: Text,
   // parameters: {
   //   assets: ['https://xd.adobe.com/embed/346520e5-a8ad-4e03-4f64-b3afb2a77ff2-4254/'],
   // },
 };
 
-export const Login = () => (
+export const Default = () => (
   <div>
     <Input label="Name" />
     <br />

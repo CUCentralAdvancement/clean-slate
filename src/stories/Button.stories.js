@@ -18,7 +18,7 @@ function ButtonWrapper(props) {
 }
 
 export default {
-  title: 'Components|Button',
+  title: 'Atoms|Button',
   component: Button,
   parameters: {
     assets: ['https://xd.adobe.com/embed/346520e5-a8ad-4e03-4f64-b3afb2a77ff2-4254/'],
@@ -27,6 +27,7 @@ export default {
 
 export const allButtons = () => (
   <div>
+    <h2>Regular</h2>
     <Button appearance="primary">Primary</Button>
     <Button appearance="secondary">Secondary</Button>
     <Button appearance="tertiary">Tertiary</Button>
@@ -35,6 +36,7 @@ export const allButtons = () => (
       Disabled
     </Button>
     <br />
+    <h2>Small</h2>
     <Button appearance="primary" size="small">
       Primary
     </Button>
@@ -82,38 +84,6 @@ export const buttonWrapper = () => (
     <Button ButtonWrapper={ButtonWrapper} appearance="primary" isDisabled>
       Disabled
     </Button>
-    <br />
-    <Button ButtonWrapper={ButtonWrapper} appearance="primary" isLoading>
-      Primary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="secondary" isLoading>
-      Secondary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="tertiary" isLoading>
-      Tertiary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="outline" isLoading>
-      Outline
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="outline" isLoading loadingText="Custom...">
-      Outline
-    </Button>
-    <br />
-    <Button ButtonWrapper={ButtonWrapper} appearance="primary" size="small">
-      Primary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="secondary" size="small">
-      Secondary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="tertiary" size="small">
-      Tertiary
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="outline" size="small">
-      Outline
-    </Button>
-    <Button ButtonWrapper={ButtonWrapper} appearance="primary" isDisabled size="small">
-      Disabled
-    </Button>
   </div>
 );
 
@@ -125,10 +95,10 @@ export const anchorWrapper = () => (
   <div>
     <StoryLinkWrapper to="http://storybook.js.org">Original Link Wrapper</StoryLinkWrapper>
     <br />
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" href="http://storybook.js.org">
+    <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" href="http://giving.cu.edu">
       Primary
     </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="secondary" href="http://storybook.js.org">
+    <Button ButtonWrapper={StoryLinkWrapper} appearance="secondary" href="http://www.google.com">
       Secondary
     </Button>
     <Button ButtonWrapper={StoryLinkWrapper} appearance="tertiary" href="http://storybook.js.org">
@@ -147,49 +117,6 @@ export const anchorWrapper = () => (
       Disabled
     </Button>
     <br />
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" isLoading href="http://storybook.js.org">
-      Primary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="secondary" isLoading href="http://storybook.js.org">
-      Secondary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="tertiary" isLoading href="http://storybook.js.org">
-      Tertiary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="outline" isLoading href="http://storybook.js.org">
-      Outline
-    </Button>
-    <Button
-      ButtonWrapper={StoryLinkWrapper}
-      appearance="outline"
-      isLoading
-      loadingText="Custom..."
-      href="http://storybook.js.org"
-    >
-      Outline
-    </Button>
-    <br />
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" size="small" href="http://storybook.js.org">
-      Primary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="secondary" size="small" href="http://storybook.js.org">
-      Secondary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="tertiary" size="small" href="http://storybook.js.org">
-      Tertiary
-    </Button>
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="outline" size="small" href="http://storybook.js.org">
-      Outline
-    </Button>
-    <Button
-      ButtonWrapper={StoryLinkWrapper}
-      appearance="primary"
-      isDisabled
-      size="small"
-      href="http://storybook.js.org"
-    >
-      Disabled
-    </Button>
   </div>
 );
 
