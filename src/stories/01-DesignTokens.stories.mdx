@@ -12,6 +12,9 @@ Instead of hard-coding in values related to parts of design, you use tokens that
 like `$color-secondary = '#000000'` and `color: $colors-secondary;`. This way you actually think of how the color is being used and
 not only that it is "black".
 
+> Before, we decided on $color-neutral-80 for a border or background with a bit of whimsy. Now, we’re applying $border-hairline or a
+> \$background-color-light in a thoughtful, conventional manner.
+
 ## Format and Usage
 
 Design tokens can be shared in different formats. In this design system, we will share them as JS (JavaScript) variables. For example,
@@ -28,7 +31,7 @@ export const colors = {
 
 // In another file.
 import { colors } from '../shared/styles';
-const bgColor = colors.primary;
+const backgroundColor = colors.primary;
 ```
 
 ## Colors
