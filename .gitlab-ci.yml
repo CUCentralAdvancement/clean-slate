@@ -1,0 +1,15 @@
+image: node:12.16
+
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+
+everything:
+  script:
+    - yarn
+    - yarn test
+    - yarn build-storybook
+    - yarn deploy:test
+  only:
+    - merge_requests
