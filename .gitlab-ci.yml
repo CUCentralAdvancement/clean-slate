@@ -8,7 +8,7 @@ cache:
 everything:
   script:
     - yarn
-    - yarn test
+    # - yarn test
     - yarn build-storybook
     - yarn deploy:test
   only:
