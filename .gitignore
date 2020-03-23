@@ -24,3 +24,10 @@ yarn-error.log*
 
 # Storybook static build
 storybook-static
+
+
+# Packaging
+demo/dist
+es
+lib
+umd
