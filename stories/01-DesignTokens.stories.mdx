@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens|Intro" />
+
+# Design Tokens
+
+Design tokens are placeholders for variables that relate to your design system. CSS variabled have been around for awhile so you can
+define a color, like `$black = '#000000';`, and then use it all around the codebase, like `color: $black;`, and only have to change
+one line if the hex code for `$black` changes.
+
+Instead of hard-coding in values related to parts of design, you use tokens that describe the value more semantically,
+like `$color-secondary = '#000000'` and `color: $colors-secondary;`. This way you actually think of how the color is being used and
+not only that it is "black".
+
+> Before, we decided on $color-neutral-80 for a border or background with a bit of whimsy. Now, we’re applying $border-hairline or a
+> \$background-color-light in a thoughtful, conventional manner.
+
+## Format and Usage
+
+Design tokens can be shared in different formats. In this design system, we will share them as JS (JavaScript) variables. For example,
+here is how colors
+
+```JS
+// shared/styles.js
+export const colors = {
+  // Palette
+  primary: '#CFB87C', // gold
+  secondary: '#000000', // black
+  tertiary: '#424242',
+};
+
+// In another file.
+import { colors } from '../shared/styles';
+const backgroundColor = colors.primary;
+```
+
+## Colors
+
+...
+
+## Typography
+
+...
