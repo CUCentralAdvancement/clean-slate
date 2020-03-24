@@ -15,7 +15,7 @@ yarn add @cu-advancement/component-library
 ```
 
 ```js
-import { Button } from '@cu-advancement/component-library';
+import { BaseButton as Button } from '@cu-advancement/component-library';
 
 function SubmitButton({ handleClick }) {
   return (
