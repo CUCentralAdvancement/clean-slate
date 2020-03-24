@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Button({ children, name, isDisabled }) {
+import { Button } from 'rebass';
+
+/**
+ * Description of button component.
+ */
+export function BaseButton(props) {
+  let styles = {};
+  if (props.isDisabled) {
+    styles.opacity = 0.5;
+  }
+
   return (
-    <button name={name} disabled={isDisabled}>
-      {children}
-    </button>
+    <Button {...props} sx={styles}>
+      {props.children}
+    </Button>
   );
 }
 
-Button.propTypes = {
+BaseButton.propTypes = {
   /**
    * The name of the button.
    */
@@ -20,7 +30,7 @@ Button.propTypes = {
   isDisabled: PropTypes.bool,
 };
 
-Button.defaultProps = {
+BaseButton.defaultProps = {
   name: 'a button',
   isDisabled: false,
 };
