@@ -36,7 +36,6 @@
     "deploy:test": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN"
   },
   "dependencies": {
-    "@rebass/preset": "^4.0.5",
     "emotion-theming": "^10.0.27",
     "rebass": "^4.0.7"
   },
