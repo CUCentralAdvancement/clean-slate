@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { ThemeProvider } from 'emotion-theming';
+import theme from '../../src/theme';
 
-import { Button } from '../../src';
+import { BaseButton as Button } from '../../src';
 
 export default class Demo extends Component {
   render() {
     return (
-      <div>
+      <ThemeProvider theme={theme}>
         <h1>component-library Demo</h1>
-        <Button name="Shame">Nooo</Button>
-      </div>
+        <Button variant="primary" isDisabled>
+          Nooo
+        </Button>
+      </ThemeProvider>
     );
   }
 }

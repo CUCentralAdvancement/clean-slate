@@ -1,4 +1,4 @@
-export const preset = {
+export const theme = {
   colors: {
     text: '#000',
     background: '#fff',
@@ -107,4 +107,4 @@ export const preset = {
   },
 };
 
-export default preset;
+export default theme;
