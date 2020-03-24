@@ -1,5 +1,5 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { Button } from '../src/components/Button';
+import { BaseButton as Button } from '../src/components/Button';
 
 <Meta title="Introduction|Welcome" />
 
@@ -43,7 +43,7 @@ with Component-driven Design since you build up from the smallest components/ato
 Here is how you would add a preview of the Button component to a MDX document with one instance that uses the primary color branding
 scheme and one instance that uses the secondary color scheme and is marked as disabled.
 
-```jsx
+```jsx live=true
 <Preview>
   <Story name="all buttons">
     <Button appearance="primary">Primary</Button>
