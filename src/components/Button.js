@@ -10,7 +10,13 @@ export function Button({ children, name, isDisabled }) {
 }
 
 Button.propTypes = {
+  /**
+   * The name of the button.
+   */
   name: PropTypes.string,
+  /**
+   * If disabled, the button has less opacity and can't be clicked.
+   */
   isDisabled: PropTypes.bool,
 };
 

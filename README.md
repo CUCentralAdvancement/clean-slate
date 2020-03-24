@@ -4,7 +4,27 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Describe things here...
+Here lies the CU Advancement component library. The library is built using React, Rebass, and ...
+
+## Usage
+
+Install the package like normal.
+
+```bash
+yarn add @cu-advancement/component-library
+```
+
+```js
+import { Button } from '@cu-advancement/component-library';
+
+function SubmitButton({ handleClick }) {
+  return (
+    <Button onClick={handleClick} variant="primary" isDisabled>
+      Submit
+    </Button>
+  );
+}
+```
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
