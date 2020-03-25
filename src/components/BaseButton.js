@@ -6,15 +6,16 @@ import { Button } from 'rebass';
 /**
  * Description of button component.
  */
-export function BaseButton(props) {
+export function BaseButton({ children, ...props }) {
   let styles = {};
   if (props.isDisabled) {
     styles.opacity = 0.5;
+    styles.cursor = 'not-allowed';
   }
 
   return (
     <Button {...props} sx={styles}>
-      {props.children}
+      {children}
     </Button>
   );
 }
@@ -28,6 +29,7 @@ BaseButton.propTypes = {
    * If disabled, the button has less opacity and can't be clicked.
    */
   isDisabled: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 
 BaseButton.defaultProps = {
