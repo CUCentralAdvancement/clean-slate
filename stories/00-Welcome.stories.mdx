@@ -1,7 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { BaseButton as Button } from '../src/components/Button';
+import { BaseButton as Button } from '../src/components/BaseButton';
 
-<Meta title="Introduction|Welcome" />
+<Meta title="Introduction/Welcome" />
 
 # Office of Advancement Component Library
 
@@ -46,7 +46,7 @@ scheme and one instance that uses the secondary color scheme and is marked as di
 ```jsx live=true
 <Preview>
   <Story name="all buttons">
-    <Button appearance="primary">Primary</Button>
+    <Button variant="primary">Primary</Button>
     <Button appearance="secondary" isDisabled>
       Disabled
     </Button>

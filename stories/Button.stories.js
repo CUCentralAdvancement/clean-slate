@@ -1,10 +1,13 @@
 import React from 'react';
 import { text, select, number } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
-import { BaseButton } from '../src/components/Button';
+import { BaseButton } from '../src/components/BaseButton';
+import { ActionButton } from '../src/components/ActionButton';
+import { LinkButton } from '../src/components/LinkButton';
 
 export default {
-  title: 'Atoms|Button',
+  title: 'Atoms/Button',
   component: Button,
 };
 
@@ -19,7 +22,7 @@ function Button(props) {
   return <BaseButton {...props} mr={2}></BaseButton>;
 }
 
-export const allText = () => (
+export const allButtons = () => (
   <div>
     <span>Knobs: </span>
     <Button
@@ -40,5 +43,19 @@ export const allText = () => (
     <Button variant="outline">Outline</Button>
 
     <Button isDisabled>Disabled</Button>
+  </div>
+);
+
+export const actionButtons = () => (
+  <div>
+    <ActionButton handleClick={action('button clicked')}>Button</ActionButton>
+  </div>
+);
+
+export const linkButtons = () => (
+  <div>
+    <LinkButton url="https://www.google.com" isExternal={true}>
+      Google It
+    </LinkButton>
   </div>
 );
