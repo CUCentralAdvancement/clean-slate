@@ -7,10 +7,11 @@ export const theme = {
     muted: '#f6f6f9',
     gray: '#dddddf',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
+    error: 'red',
   },
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'inherit',
+    body: '"Helvetica Neue", system-ui, sans-serif',
+    heading: '"Helvetica Neue", system-ui, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -28,7 +29,7 @@ export const theme = {
     avatar: 48,
   },
   radii: {
-    default: 4,
+    default: 0,
     circle: 99999,
   },
   shadows: {
