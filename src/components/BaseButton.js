@@ -8,6 +8,7 @@ import { Button } from 'rebass';
  */
 export function BaseButton({ children, ...props }) {
   let styles = {};
+
   if (props.isDisabled) {
     styles.opacity = 0.5;
     styles.cursor = 'not-allowed';
