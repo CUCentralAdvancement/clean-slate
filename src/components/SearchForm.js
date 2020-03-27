@@ -67,10 +67,10 @@ export function SearchForm({ label, submitHandler, ...props }) {
               </Box>
             </Flex>
             <Flex mx={-2} mb={3} flexDirection={['column', 'row', 'row']}>
-              <Box width={[1, 1, 2 / 3]} px={2}>
+              <Box width={[1, 1, 3 / 4]} px={2}>
                 <TextInput name="search" type="text" />
               </Box>
-              <Box width={[1, 1, 1 / 3]} px={2} pt={[2, 0, 0]}>
+              <Box width={[1, 1, 1 / 4]} px={2} pt={[2, 0, 0]}>
                 <BaseButton variant="secondary" type="submit" mr={2}>
                   Search
                 </BaseButton>
