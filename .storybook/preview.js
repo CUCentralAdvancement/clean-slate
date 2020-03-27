@@ -7,4 +7,8 @@ import { withA11y } from '@storybook/addon-a11y';
 // import { GlobalStyle } from "../src/shared/global";
 
 addDecorator(withA11y);
-addDecorator((story) => <ThemeProvider theme={theme}>{story()}</ThemeProvider>);
+addDecorator((story) => (
+  <ThemeProvider theme={theme}>
+    <div style={{ fontFamily: theme.fonts.body }}>{story()}</div>
+  </ThemeProvider>
+));

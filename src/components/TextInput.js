@@ -17,11 +17,10 @@ export function TextInput({ label, ...props }) {
         {...field}
         {...props}
         color={meta.touched && meta.error ? theme.colors.error : 'inherit'}
-        fontFamily="body"
         bg="background"
       />
       {meta.touched && meta.error ? (
-        <Text mt={1} ml={2} color="error" fontFamily="body">
+        <Text mt={1} ml={2} color="error">
           {meta.error}
         </Text>
       ) : null}

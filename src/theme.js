@@ -33,7 +33,7 @@ export const theme = {
     circle: 99999,
   },
   shadows: {
-    card: '0 0 4px rgba(0, 0, 0, .125)',
+    card: '0 2px 6px rgba(0,0,0,.15)',
   },
   // rebass variants
   text: {
@@ -63,6 +63,7 @@ export const theme = {
       p: 2,
       bg: 'background',
       boxShadow: 'card',
+      border: '1px solid #ccc',
     },
     link: {
       color: 'primary',
