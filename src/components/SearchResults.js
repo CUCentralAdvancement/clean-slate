@@ -15,28 +15,50 @@ export function SearchResults({ results, ...props }) {
   };
 
   return (
-    <Flex p={2} flexWrap="wrap">
-      {results.map((res, index) => (
-        <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
-          <Link sx={{ textDecoration: 'none' }} color="text" href="#">
-            <Flex flexDirection="column" minHeight={231}>
-              <Box bg={headerColors[res.campus]} mx={-2} mt={-2} color="background">
-                <Flex>
-                  <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
-                    {res.campus}
-                  </Text>
-                  {res.featured && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
-                </Flex>
-              </Box>
-              <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
-                {res.title}
-              </Heading>
-              <Text p={2}>{res.interest}</Text>
-            </Flex>
-          </Link>
-        </Card>
-      ))}
-    </Flex>
+    <>
+      <Box p={3}>
+        <Text color="primary" mb={2}>
+          {results.length} Results
+        </Text>
+        <Text sx={{ display: 'inline-block', fontStyle: 'italic' }} mr={2}>
+          Can't find what you're looking for?
+        </Text>
+        <Link
+          sx={{
+            display: 'inline-block',
+            fontStyle: 'italic',
+            textDecoration: 'none',
+            color: 'link',
+            ':hover': { textDecoration: 'underline' },
+          }}
+          href="https://giving.cu.edu/fund/write-fund"
+        >
+          Click here to use our write-in fund option.
+        </Link>
+      </Box>
+      <Flex p={2} flexWrap="wrap">
+        {results.map((res, index) => (
+          <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
+            <Link sx={{ textDecoration: 'none' }} color="text" href="#">
+              <Flex flexDirection="column" minHeight={231}>
+                <Box bg={headerColors[res.campus]} mx={-2} mt={-2} color="background">
+                  <Flex>
+                    <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
+                      {res.campus}
+                    </Text>
+                    {res.featured && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
+                  </Flex>
+                </Box>
+                <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
+                  {res.title}
+                </Heading>
+                <Text p={2}>{res.interest}</Text>
+              </Flex>
+            </Link>
+          </Card>
+        ))}
+      </Flex>
+    </>
   );
 }
 

@@ -8,6 +8,7 @@ export const theme = {
     gray: '#dddddf',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     error: 'red',
+    link: '#298FCE',
   },
   fonts: {
     body: '"Helvetica Neue", system-ui, sans-serif',
