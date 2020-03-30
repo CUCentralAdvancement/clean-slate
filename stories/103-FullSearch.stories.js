@@ -17,7 +17,7 @@ Object.keys(searchData).forEach((key) => {
 });
 
 export default {
-  title: 'Organisms/Full Search',
+  title: '103-Organisms/103-Full Search',
 };
 
 export const fullSearch = () => {

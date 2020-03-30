@@ -6,7 +6,7 @@ import { Flex, Box } from 'rebass';
 import SearchForm from '../src/components/SearchForm';
 
 export default {
-  title: 'Molecules/Search Form',
+  title: '102-Molecules/102-Search Form',
   component: SearchForm,
 };
 
