@@ -4,7 +4,7 @@ import { ThemeProvider } from 'emotion-theming';
 import theme from '../../src/theme';
 
 import { SearchForm, SearchResults } from '../../src';
-import { searchData } from '../../stories/data';
+import { searchData } from '../../stories/results';
 
 export default class Demo extends Component {
   render() {

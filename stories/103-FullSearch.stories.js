@@ -23,7 +23,6 @@ export default {
 export const fullSearch = () => {
   const [results, setResults] = useState(realSearchData);
   function submitHandler(values) {
-    console.log(values);
     const newResults = results.filter((res) => {
       if (values.campus !== 'All') {
         return res.field_campuses_tid === values.campus;

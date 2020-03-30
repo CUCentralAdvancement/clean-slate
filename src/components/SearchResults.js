@@ -28,49 +28,6 @@ function Header({ results }) {
   );
 }
 
-/**
- * Description of the search results component.
- */
-export default function SearchResults({ results, resultsHeader, ...props }) {
-  const headerColors = {
-    UCCS: '#298FCE',
-    'CU Anschutz': '#0A9',
-    'CU Denver': '#C63965',
-    'CU Boulder': '#F29525',
-  };
-
-  return (
-    <>
-      {/* {ResultsHeader && <Box p={3}>{resultsHeader}</Box>} */}
-      <Box p={3}>
-        <Header results={results} />
-      </Box>
-      <Flex p={2} flexWrap="wrap" mx="auto">
-        {results.map((res, index) => (
-          <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
-            <Link sx={{ textDecoration: 'none' }} color="text" href="#">
-              <Flex flexDirection="column" minHeight={231}>
-                <Box bg={headerColors[res.campus]} mx={-2} mt={-2} color="background">
-                  <Flex>
-                    <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
-                      {res.campus}
-                    </Text>
-                    {res.featured == true && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
-                  </Flex>
-                </Box>
-                <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
-                  {res.title}
-                </Heading>
-                <Text p={2}>{res.interest}</Text>
-              </Flex>
-            </Link>
-          </Card>
-        ))}
-      </Flex>
-    </>
-  );
-}
-
 function FeaturedFund({ headerColors, res }) {
   return (
     <Box bg="black" mr={-2} my={2}>
@@ -101,6 +58,48 @@ function FeaturedFund({ headerColors, res }) {
         </Text>
       </Flex>
     </Box>
+  );
+}
+
+/**
+ * Description of the search results component.
+ */
+export default function SearchResults({ results, ...props }) {
+  const headerColors = {
+    UCCS: '#298FCE',
+    'CU Anschutz': '#0A9',
+    'CU Denver': '#C63965',
+    'CU Boulder': '#F29525',
+  };
+
+  return (
+    <>
+      <Box p={3}>
+        <Header results={results} />
+      </Box>
+      <Flex p={2} flexWrap="wrap" mx="auto">
+        {results.map((res, index) => (
+          <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
+            <Link sx={{ textDecoration: 'none' }} color="text" href="#">
+              <Flex flexDirection="column" minHeight={231}>
+                <Box bg={headerColors[res.campus]} mx={-2} mt={-2} color="background">
+                  <Flex>
+                    <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
+                      {res.campus}
+                    </Text>
+                    {res.featured == true && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
+                  </Flex>
+                </Box>
+                <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
+                  {res.title}
+                </Heading>
+                <Text p={2}>{res.interest}</Text>
+              </Flex>
+            </Link>
+          </Card>
+        ))}
+      </Flex>
+    </>
   );
 }
 
