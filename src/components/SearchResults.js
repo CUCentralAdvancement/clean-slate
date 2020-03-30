@@ -3,10 +3,35 @@ import PropTypes from 'prop-types';
 
 import { Card, Text, Flex, Heading, Link, Box } from 'rebass';
 
+function Header({ results }) {
+  return (
+    <>
+      <Text color="primary" mb={2}>
+        {results.length} Results
+      </Text>
+      <Text sx={{ display: 'inline-block', fontStyle: 'italic' }} mr={2}>
+        Can't find what you're looking for?
+      </Text>
+      <Link
+        sx={{
+          display: 'inline-block',
+          fontStyle: 'italic',
+          textDecoration: 'none',
+          color: 'link',
+          ':hover': { textDecoration: 'underline' },
+        }}
+        href="https://giving.cu.edu/fund/write-fund"
+      >
+        Click here to use our write-in fund option.
+      </Link>
+    </>
+  );
+}
+
 /**
  * Description of the search results component.
  */
-export function SearchResults({ results, ...props }) {
+export default function SearchResults({ results, resultsHeader, ...props }) {
   const headerColors = {
     UCCS: '#298FCE',
     'CU Anschutz': '#0A9',
@@ -16,27 +41,11 @@ export function SearchResults({ results, ...props }) {
 
   return (
     <>
+      {/* {ResultsHeader && <Box p={3}>{resultsHeader}</Box>} */}
       <Box p={3}>
-        <Text color="primary" mb={2}>
-          {results.length} Results
-        </Text>
-        <Text sx={{ display: 'inline-block', fontStyle: 'italic' }} mr={2}>
-          Can't find what you're looking for?
-        </Text>
-        <Link
-          sx={{
-            display: 'inline-block',
-            fontStyle: 'italic',
-            textDecoration: 'none',
-            color: 'link',
-            ':hover': { textDecoration: 'underline' },
-          }}
-          href="https://giving.cu.edu/fund/write-fund"
-        >
-          Click here to use our write-in fund option.
-        </Link>
+        <Header results={results} />
       </Box>
-      <Flex p={2} flexWrap="wrap">
+      <Flex p={2} flexWrap="wrap" mx="auto">
         {results.map((res, index) => (
           <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
             <Link sx={{ textDecoration: 'none' }} color="text" href="#">
@@ -46,7 +55,7 @@ export function SearchResults({ results, ...props }) {
                     <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
                       {res.campus}
                     </Text>
-                    {res.featured && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
+                    {res.featured == true && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
                   </Flex>
                 </Box>
                 <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
@@ -64,7 +73,7 @@ export function SearchResults({ results, ...props }) {
 
 function FeaturedFund({ headerColors, res }) {
   return (
-    <Box bg="black" width={'50'} mr={-2} my={2}>
+    <Box bg="black" mr={-2} my={2}>
       <Flex flexDirection="row">
         <Box height="100%">
           <svg
@@ -100,8 +109,10 @@ SearchResults.propTypes = {
    * Results for current search.
    */
   results: PropTypes.array,
+  resultsHeader: PropTypes.element,
 };
 
 SearchResults.defaultProps = {
   results: [],
+  resultsHeader: null,
 };

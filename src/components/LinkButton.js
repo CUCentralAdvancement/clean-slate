@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'rebass';
-import { BaseButton } from './BaseButton';
+import BaseButton from './BaseButton';
 
 /**
  * Description of the action button component.
  */
-export function LinkButton({ children, url, isExternal, ...props }) {
+export default function LinkButton({ children, url, isExternal, ...props }) {
   // @todo Add some kind of checking around url and altText. Could use Yup for this.
   return (
     <Link href={url} target={isExternal ? '_blank' : '_self'}>

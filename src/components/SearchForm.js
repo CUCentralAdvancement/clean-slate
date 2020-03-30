@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import { Flex, Box } from 'rebass';
 
-import { TextInput } from './TextInput';
-import { BaseButton } from './BaseButton';
-import { SelectInput } from './SelectInput';
-import { Select } from '@rebass/forms';
+import TextInput from './TextInput';
+import BaseButton from './BaseButton';
+import SelectInput from './SelectInput';
 
-export function SearchForm({ label, submitHandler, ...props }) {
+export default function SearchForm({ submitHandler, resetHandler, ...props }) {
   return (
     <>
       <Formik
@@ -19,16 +18,14 @@ export function SearchForm({ label, submitHandler, ...props }) {
           interest: 'All',
           fundType: 'All',
         }}
-        validationSchema={Yup.object({
-          search: Yup.string()
-            .min(3, 'Search query must be at least 3 characters long')
-            .required('Search query is required'),
-        })}
+        // validationSchema={Yup.object({
+        //   search: Yup.string()
+        //     .min(3, 'Search query must be at least 3 characters long')
+        //     .required('Search query is required'),
+        // })}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            submitHandler(values);
-            setSubmitting(false);
-          }, 400);
+          submitHandler(values);
+          setSubmitting(false);
         }}
       >
         {({ resetForm, values }) => (
@@ -74,7 +71,14 @@ export function SearchForm({ label, submitHandler, ...props }) {
                 <BaseButton variant="secondary" type="submit" mr={2}>
                   Search
                 </BaseButton>
-                <BaseButton variant="secondary" type="reset">
+                <BaseButton
+                  variant="secondary"
+                  type="reset"
+                  onClick={() => {
+                    resetHandler();
+                    resetForm();
+                  }}
+                >
                   Reset
                 </BaseButton>
               </Box>
@@ -90,9 +94,9 @@ TextInput.propTypes = {
   /**
    * URL where the button goes once clicked.
    */
-  label: PropTypes.string,
+  submitHandler: PropTypes.func,
 };
 
 TextInput.defaultProps = {
-  label: '',
+  submitHandler: (values) => console.log(values),
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { BaseButton } from './BaseButton';
+import BaseButton from './BaseButton';
 
 /**
  * Description of the action button component.
  */
-export function ActionButton({ children, handleClick, ...props }) {
+export default function ActionButton({ children, handleClick, ...props }) {
   return (
     <BaseButton {...props} onClick={handleClick}>
       {children}

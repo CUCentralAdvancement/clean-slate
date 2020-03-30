@@ -5,7 +5,7 @@ import { Label, Select } from '@rebass/forms';
 
 import { theme } from '../theme';
 
-export function SelectInput({ label, ...props }) {
+export default function SelectInput({ label, ...props }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and also replace ErrorMessage entirely.
   const [field, meta] = useField(props);
