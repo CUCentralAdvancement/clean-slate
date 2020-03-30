@@ -6,7 +6,7 @@ import { Text } from 'rebass';
 
 import { theme } from '../theme';
 
-export function TextInput({ label, ...props }) {
+export default function TextInput({ label, ...props }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and also replace ErrorMessage entirely.
   const [field, meta] = useField(props);

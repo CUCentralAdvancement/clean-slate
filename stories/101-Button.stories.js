@@ -2,12 +2,12 @@ import React from 'react';
 import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { BaseButton } from '../src/components/BaseButton';
-import { ActionButton } from '../src/components/ActionButton';
-import { LinkButton } from '../src/components/LinkButton';
+import BaseButton from '../src/components/BaseButton';
+import ActionButton from '../src/components/ActionButton';
+import LinkButton from '../src/components/LinkButton';
 
 export default {
-  title: 'Atoms/Button',
+  title: '101-Atoms/101-Button',
   component: Button,
 };
 

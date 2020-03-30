@@ -3,10 +3,10 @@ module.exports = {
   npm: {
     esModules: true,
     umd: {
-      global: 'CU',
+      global: 'ColUniv',
       externals: {
-        react: 'React'
-      }
-    }
-  }
-}
+        react: 'React',
+      },
+    },
+  },
+};

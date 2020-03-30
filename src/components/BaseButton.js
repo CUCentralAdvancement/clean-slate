@@ -6,7 +6,7 @@ import { Button } from 'rebass';
 /**
  * Description of button component.
  */
-export function BaseButton({ children, ...props }) {
+export default function BaseButton({ children, ...props }) {
   let styles = {};
 
   if (props.isDisabled) {

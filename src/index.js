@@ -6,17 +6,18 @@ export { theme } from './theme';
 /**
  * Buttons.
  */
-export { BaseButton } from './components/BaseButton';
-export { ActionButton } from './components/ActionButton';
-export { LinkButton } from './components/LinkButton';
+export { default as BaseButton } from './components/BaseButton';
+export { default as ActionButton } from './components/ActionButton';
+export { default as LinkButton } from './components/LinkButton';
 
 /**
  * Forms.
  */
-export { TextInput } from './components/TextInput';
-export { SelectInput } from './components/SelectInput';
+export { default as TextInput } from './components/TextInput';
+export { default as SelectInput } from './components/SelectInput';
 
 /**
  * Molecules.
  */
-export { SearchForm } from './components/SearchForm';
+export { default as SearchForm } from './components/SearchForm';
+export { default as SearchResults } from './components/SearchResults';
