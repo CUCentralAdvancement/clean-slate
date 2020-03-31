@@ -7,7 +7,7 @@ import ActionButton from '../src/components/ActionButton';
 import LinkButton from '../src/components/LinkButton';
 
 export default {
-  title: '101-Atoms/101-Button',
+  title: 'Atoms/Button',
   component: Button,
 };
 

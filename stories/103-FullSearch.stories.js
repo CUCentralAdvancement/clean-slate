@@ -17,13 +17,13 @@ Object.keys(searchData).forEach((key) => {
 });
 
 export default {
-  title: '103-Organisms/103-Full Search',
+  title: 'Organisms/Full Search',
 };
 
 export const fullSearch = () => {
   const [results, setResults] = useState(realSearchData);
   function submitHandler(values) {
-    const newResults = results.filter((res) => {
+    const newResults = realSearchData.filter((res) => {
       if (values.campus !== 'All') {
         return res.field_campuses_tid === values.campus;
       }
@@ -33,10 +33,10 @@ export const fullSearch = () => {
       if (values.fundType !== 'All') {
         return res.field_fund_type_tid === values.fundType;
       }
-      if (values.search !== '' && res.title.toLowerCase().includes(values.search.toLowerCase())) {
-        return true;
+      if (values.search !== '') {
+        return res.title.toLowerCase().includes(values.search.toLowerCase());
       }
-      return false;
+      return true;
     });
     setResults(newResults);
     action('Searched');

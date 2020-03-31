@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Form } from 'formik';
+import { Formik, Form, useFormikContext } from 'formik';
 // import * as Yup from 'yup';
 import { Flex, Box } from 'rebass';
 
 import TextInput from './TextInput';
 import BaseButton from './BaseButton';
 import SelectInput from './SelectInput';
+
+const AutoSubmitToken = () => {
+  // Grab values and submitForm from context
+  const { values, submitForm, resetForm, getFieldMeta } = useFormikContext();
+  const searchField = getFieldMeta('search');
+  React.useEffect(() => {
+    // if (values.search.length >= 3) {
+    //   submitForm();
+    // }
+    // if (values.search.length < 1) {
+    //   resetHandler();
+    // }
+  }, [values, submitForm]);
+  return null;
+};
 
 export default function SearchForm({ submitHandler, resetHandler, ...props }) {
   return (
@@ -83,6 +98,7 @@ export default function SearchForm({ submitHandler, resetHandler, ...props }) {
                 </BaseButton>
               </Box>
             </Flex>
+            <AutoSubmitToken />
           </Form>
         )}
       </Formik>

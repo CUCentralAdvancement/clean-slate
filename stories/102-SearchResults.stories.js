@@ -8,7 +8,7 @@ const realSearchData = Object.keys(searchData).map((key) => {
 });
 
 export default {
-  title: '102-Molecules/102-Search Results',
+  title: 'Molecules/Search Results',
   component: SearchResults,
 };
 
