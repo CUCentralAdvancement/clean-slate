@@ -98,7 +98,7 @@ export default function SearchForm({ submitHandler, resetHandler, ...props }) {
                 </BaseButton>
               </Box>
             </Flex>
-            <AutoSubmitToken />
+            {/* <AutoSubmitToken /> */}
           </Form>
         )}
       </Formik>
