@@ -83,11 +83,11 @@ export default function SearchForm({ submitHandler, resetHandler, ...props }) {
                 <TextInput name="search" type="text" />
               </Box>
               <Box width={[1, 1, 1 / 4]} px={2} pt={[2, 0, 0]}>
-                <BaseButton variant="secondary" type="submit" mr={2}>
+                <BaseButton variant="button.secondary" type="submit" mr={2}>
                   Search
                 </BaseButton>
                 <BaseButton
-                  variant="secondary"
+                  variant="button.secondary"
                   type="reset"
                   onClick={() => {
                     resetHandler();

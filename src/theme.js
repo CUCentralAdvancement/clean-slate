@@ -9,6 +9,7 @@ export const theme = {
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     error: 'red',
     link: '#298FCE',
+    white: '#fff',
   },
   fonts: {
     body: '"Helvetica Neue", system-ui, sans-serif',
@@ -17,6 +18,7 @@ export const theme = {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
+    light: 200,
     body: 400,
     heading: 700,
     bold: 700,
@@ -30,7 +32,7 @@ export const theme = {
     avatar: 48,
   },
   radii: {
-    default: 0,
+    default: 1,
     circle: 99999,
   },
   shadows: {
@@ -81,13 +83,17 @@ export const theme = {
       },
     },
   },
-  buttons: {
+  button: {
     primary: {
       fontSize: 2,
       fontWeight: 'bold',
       color: 'background',
       bg: 'primary',
       borderRadius: 'default',
+      ':hover': {
+        cursor: 'pointer',
+        opacity: 0.8,
+      },
     },
     outline: {
       variant: 'buttons.primary',
@@ -106,6 +112,26 @@ export const theme = {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
+    },
+  },
+  menu: {
+    bgDark: {
+      box: {
+        p: 3,
+        color: 'white',
+      },
+      heading: {
+        mb: 2,
+      },
+      links: {
+        p: 1,
+        fontWeight: 'light',
+        color: 'white',
+        textDecoration: 'none',
+        ':hover': {
+          textDecoration: 'underline',
+        },
+      },
     },
   },
 };

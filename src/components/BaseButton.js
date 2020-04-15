@@ -7,7 +7,7 @@ import { Button } from 'rebass';
  * Description of button component.
  */
 export default function BaseButton({ children, ...props }) {
-  let styles = {};
+  let styles = props.sx ? props.sx : {};
 
   if (props.isDisabled) {
     styles.opacity = 0.5;

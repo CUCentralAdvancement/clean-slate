@@ -46,10 +46,10 @@ scheme and one instance that uses the secondary color scheme and is marked as di
 ```jsx live=true
 <Preview>
   <Story name="all buttons">
-    <Button variant="primary">Primary</Button>
-    <Button appearance="secondary" isDisabled>
+    <BaseButton variant="button.primary">Primary</BaseButton>
+    <BaseButton variant="button.secondary" isDisabled>
       Disabled
-    </Button>
+    </BaseButton>
   </Story>
 </Preview>
 ```
@@ -57,10 +57,10 @@ scheme and one instance that uses the secondary color scheme and is marked as di
 And here is how the story gets rendered into the actual buttons displaying the same component but in different states.
 
 <Preview>
-  <Button appearance="primary">Primary</Button>
-  <Button appearance="secondary" isDisabled>
+  <BaseButton variant="button.primary">Primary</BaseButton>
+  <BaseButton variant="secondary.secondary" isDisabled>
     Disabled
-  </Button>
+  </BaseButton>
 </Preview>
 
 ## Addons
