@@ -18,6 +18,8 @@ const paddingOptions = {
   step: 1,
 };
 
+const variants = { primary: 'button.primary', secondary: 'button.secondary', outline: 'button.outline' };
+
 function Button(props) {
   return <BaseButton {...props} mr={2}></BaseButton>;
 }
@@ -25,22 +27,13 @@ function Button(props) {
 export const allButtons = () => (
   <div>
     <span>Knobs: </span>
-    <Button
-      variant={select('Variants', { primary: 'primary', secondary: 'secondary', outline: 'outline' }, 'primary')}
-      sx={{
-        fontSize: 1,
-        textTransform: 'uppercase',
-        borderRadius: 99999,
-      }}
-      mb={2}
-      p={number('Padding', 2, paddingOptions)}
-    >
+    <Button variant={select('Variants', variants, 'button.primary')} p={number('Padding', 2, paddingOptions)}>
       {text('Button Text', 'Click Me!')}
     </Button>
     <hr />
-    <Button variant="primary">Primary</Button>
-    <Button variant="secondary">Secondary</Button>
-    <Button variant="outline">Outline</Button>
+    <Button variant="button.primary">Primary</Button>
+    <Button variant="button.secondary">Secondary</Button>
+    <Button variant="button.outline">Outline</Button>
 
     <Button isDisabled>Disabled</Button>
   </div>
