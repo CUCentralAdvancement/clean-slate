@@ -16,8 +16,4 @@ export { default as LinkButton } from './components/LinkButton';
 export { default as TextInput } from './components/TextInput';
 export { default as SelectInput } from './components/SelectInput';
 
-/**
- * Molecules.
- */
-export { default as SearchForm } from './components/SearchForm';
-export { default as SearchResults } from './components/SearchResults';
+export { default as Menu } from './components/Menu';
