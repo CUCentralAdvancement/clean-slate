@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { Box, Flex } from 'rebass';
@@ -17,7 +16,7 @@ Object.keys(searchData).forEach((key) => {
 });
 
 export default {
-  title: 'Organisms/Full Search',
+  title: 'Recipes/Full Search',
 };
 
 export const fullSearch = () => {

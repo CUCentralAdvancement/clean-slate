@@ -4,9 +4,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Flex, Box } from 'rebass';
 
-import TextInput from '../src/components/TextInput';
-import BaseButton from '../src/components/BaseButton';
-import SelectInput from '../src/components/SelectInput';
+import TextInput from '../../src/components/TextInput';
+import BaseButton from '../../src/components/BaseButton';
+import SelectInput from '../../src/components/SelectInput';
 
 export default function SearchForm({ submitHandler, resetHandler, ...props }) {
   return (

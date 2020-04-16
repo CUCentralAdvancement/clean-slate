@@ -15,3 +15,5 @@ export { default as LinkButton } from './components/LinkButton';
  */
 export { default as TextInput } from './components/TextInput';
 export { default as SelectInput } from './components/SelectInput';
+
+export { default as Menu } from './components/Menu';

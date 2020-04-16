@@ -3,10 +3,10 @@ import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { Box, Heading } from 'rebass';
-import Menu from '../src/components/Menu';
+import Menu from '../../src/components/Menu';
 
 export default {
-  title: 'Molecules/Menu',
+  title: 'Components/Menu',
   component: Menu,
 };
 

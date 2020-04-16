@@ -1,12 +1,11 @@
 import React from 'react';
 import { Box, Flex, Text } from 'rebass';
-import Menu from '../src/components/Menu';
-import LinkButton from '../src/components/LinkButton';
+import Menu from '../../src/components/Menu';
+import LinkButton from '../../src/components/LinkButton';
 import { menuLinks } from './menus';
 
 export default {
-  title: 'Organisms/Footer Menu',
-  // component: SearchResults,
+  title: 'Recipes/Footer Menu',
 };
 
 const PaddedText = ({ children }) => (

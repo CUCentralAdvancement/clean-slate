@@ -8,11 +8,11 @@ const realSearchData = Object.keys(searchData).map((key) => {
 });
 
 export default {
-  title: 'Molecules/Search Results',
+  title: 'Recipes/Search Results',
   component: SearchResults,
 };
 
-export const searchStuff = () => (
+export const searchResults = () => (
   <Box maxWidth={1280} mx="auto">
     <SearchResults results={realSearchData} />
   </Box>
