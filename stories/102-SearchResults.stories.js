@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass';
-import SearchResults from '../src/components/SearchResults';
+import SearchResults from './SearchResults';
 import { searchData } from './results.js';
 
 const realSearchData = Object.keys(searchData).map((key) => {

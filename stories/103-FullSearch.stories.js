@@ -3,8 +3,8 @@ import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { Box, Flex } from 'rebass';
-import SearchResults from '../src/components/SearchResults';
-import SearchForm from '../src/components/SearchForm';
+import SearchResults from './SearchResults';
+import SearchForm from './SearchForm';
 import { searchData } from './results.js';
 
 const realSearchData = [];

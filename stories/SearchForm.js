@@ -1,27 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Form, useFormikContext } from 'formik';
-// import * as Yup from 'yup';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import { Flex, Box } from 'rebass';
 
-import TextInput from './TextInput';
-import BaseButton from './BaseButton';
-import SelectInput from './SelectInput';
-
-const AutoSubmitToken = () => {
-  // Grab values and submitForm from context
-  const { values, submitForm, resetForm, getFieldMeta } = useFormikContext();
-  const searchField = getFieldMeta('search');
-  React.useEffect(() => {
-    // if (values.search.length >= 3) {
-    //   submitForm();
-    // }
-    // if (values.search.length < 1) {
-    //   resetHandler();
-    // }
-  }, [values, submitForm]);
-  return null;
-};
+import TextInput from '../src/components/TextInput';
+import BaseButton from '../src/components/BaseButton';
+import SelectInput from '../src/components/SelectInput';
 
 export default function SearchForm({ submitHandler, resetHandler, ...props }) {
   return (
@@ -33,11 +18,11 @@ export default function SearchForm({ submitHandler, resetHandler, ...props }) {
           interest: 'All',
           fundType: 'All',
         }}
-        // validationSchema={Yup.object({
-        //   search: Yup.string()
-        //     .min(3, 'Search query must be at least 3 characters long')
-        //     .required('Search query is required'),
-        // })}
+        validationSchema={Yup.object({
+          search: Yup.string()
+            .min(3, 'Search query must be at least 3 characters long')
+            .required('Search query is required'),
+        })}
         onSubmit={(values, { setSubmitting }) => {
           submitHandler(values);
           setSubmitting(false);
@@ -98,21 +83,9 @@ export default function SearchForm({ submitHandler, resetHandler, ...props }) {
                 </BaseButton>
               </Box>
             </Flex>
-            {/* <AutoSubmitToken /> */}
           </Form>
         )}
       </Formik>
     </>
   );
 }
-
-TextInput.propTypes = {
-  /**
-   * URL where the button goes once clicked.
-   */
-  submitHandler: PropTypes.func,
-};
-
-TextInput.defaultProps = {
-  submitHandler: (values) => console.log(values),
-};
