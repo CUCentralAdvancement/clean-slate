@@ -6,6 +6,15 @@ import theme from '../../src/theme';
 import { SearchForm, SearchResults } from '../../src';
 import { searchData } from '../../stories/results';
 
+const realSearchData = [];
+Object.keys(searchData).forEach((key) => {
+  if (searchData[key].featured == true) {
+    realSearchData.unshift(searchData[key]);
+  } else {
+    realSearchData.push(searchData[key]);
+  }
+});
+
 export default class Demo extends Component {
   render() {
     return (
@@ -16,7 +25,7 @@ export default class Demo extends Component {
           </div>
         </div>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <SearchResults results={searchData} />
+          <SearchResults results={realSearchData} />
         </div>
       </ThemeProvider>
     );

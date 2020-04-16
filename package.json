@@ -1,6 +1,6 @@
 {
   "name": "@cu-advancement/component-library",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Component library for the Office of Advancement at CU",
   "author": "CU Advancement",
   "homepage": "https://gitlab.com/cu-advancement/clean-slate#readme",
@@ -33,7 +33,8 @@
     "test:watch": "nwb test-react --server",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "deploy:test": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN"
+    "deploy:test": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN",
+    "stats": "webpack-bundle-analyzer demo/dist/stats.json demo/dist"
   },
   "dependencies": {
     "@rebass/forms": "^4.0.6",
@@ -63,6 +64,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "webpack-bundle-analyzer": "^3.7.0",
     "yup": "^0.28.3"
   }
 }
