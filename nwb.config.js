@@ -13,7 +13,7 @@ module.exports = {
   },
   webpack: {
     extra: {
-      plugins: [new BundleAnalyzerPlugin({ generateStatsFile: true, analyzerPort: 8787 })],
+      plugins: [new BundleAnalyzerPlugin({ generateStatsFile: true, analyzerMode: 'disabled' })],
     },
   },
 };
