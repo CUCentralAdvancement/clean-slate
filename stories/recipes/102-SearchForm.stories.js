@@ -3,10 +3,10 @@ import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { Flex, Box } from 'rebass';
-import SearchForm from '../src/components/SearchForm';
+import SearchForm from './SearchForm';
 
 export default {
-  title: 'Molecules/Search Form',
+  title: 'Recipes/Search Form',
   component: SearchForm,
 };
 
