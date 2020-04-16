@@ -38,9 +38,7 @@
   "dependencies": {
     "@rebass/forms": "^4.0.6",
     "emotion-theming": "^10.0.27",
-    "formik": "^2.1.4",
-    "rebass": "^4.0.7",
-    "yup": "^0.28.3"
+    "rebass": "^4.0.7"
   },
   "peerDependencies": {
     "react": "16.x"
@@ -58,11 +56,13 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
     "babel-loader": "^8.1.0",
+    "formik": "^2.1.4",
     "netlify-cli": "^2.40.0",
     "nwb": "0.24.x",
     "prettier": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "yup": "^0.28.3"
   }
 }
