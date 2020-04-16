@@ -17,3 +17,5 @@ export { default as TextInput } from './components/TextInput';
 export { default as SelectInput } from './components/SelectInput';
 
 export { default as Menu } from './components/Menu';
+
+export { Flex, Heading, Box, Text } from 'rebass';

@@ -1,6 +1,7 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = {
+let config = {
+  polyfill: false,
   type: 'react-component',
   npm: {
     esModules: true,
@@ -17,3 +18,12 @@ module.exports = {
     },
   },
 };
+
+// if (process.env.NODE_ENV === 'production') {
+//   console.log('Whooopie!!!!');
+//   config.babel = {
+//     plugins: 'transform-react-remove-prop-types',
+//   };
+// }
+
+module.exports = config;
