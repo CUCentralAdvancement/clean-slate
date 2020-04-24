@@ -18,4 +18,4 @@ export { default as SelectInput } from './components/SelectInput';
 
 export { default as Menu } from './components/Menu';
 
-export { Flex, Heading, Box, Text } from 'rebass';
+export { Flex, Heading, Box, Text } from 'theme-ui';

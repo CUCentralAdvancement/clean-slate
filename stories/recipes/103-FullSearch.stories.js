@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
-import { Box, Flex } from 'rebass';
+import { Box, Flex } from 'theme-ui';
 import SearchResults from './SearchResults';
 import SearchForm from './SearchForm';
 import { searchData } from './results.js';
@@ -44,11 +44,11 @@ export const fullSearch = () => {
   return (
     <>
       <Flex bg="gray" p={3}>
-        <Box width={[1, 1, 2 / 3]} mx="auto">
+        <Box sx={{ maxWidth: 1280, mx: 'auto' }}>
           <SearchForm submitHandler={submitHandler} resetHandler={() => setResults(realSearchData)} />
         </Box>
       </Flex>
-      <Box maxWidth={1280} mx="auto">
+      <Box sx={{ maxWidth: 1280, mx: 'auto' }}>
         <SearchResults results={results} />
       </Box>
     </>

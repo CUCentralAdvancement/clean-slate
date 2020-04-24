@@ -2,7 +2,7 @@ import React from 'react';
 import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { Box, Heading } from 'rebass';
+import { Box, Heading } from 'theme-ui';
 import Menu from '../../src/components/Menu';
 
 export default {
@@ -17,14 +17,14 @@ const menuLinks = [
 ];
 
 export const darkBackgroundMenu = () => (
-  <Box width={[1, 1, 2 / 3]} mx="auto">
+  <Box sx={{ maxWidth: 1280, mx: 'auto' }}>
     <Heading mb={2}>Column</Heading>
     <Box bg="#000" mb={4}>
-      <Menu title="My Menu" links={menuLinks} variant="menu.bgDark" linkDirection="column" />
+      <Menu title="My Menu" links={menuLinks} variant="bgDark" linkDirection="column" />
     </Box>
     <Heading mb={2}>Row</Heading>
     <Box bg="#000">
-      <Menu title="My Menu" links={menuLinks} variant="menu.bgDark" linkDirection="row" />
+      <Menu title="My Menu" links={menuLinks} variant="bgDark" linkDirection="row" />
     </Box>
   </Box>
 );

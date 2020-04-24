@@ -1,20 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex, Heading, Box } from 'rebass';
+import { Flex, Heading, Box } from 'theme-ui';
 
 import BaseLink from './BaseLink';
+
+const styles = {
+  bgDark: {
+    box: {
+      p: 3,
+      color: 'white',
+    },
+    heading: {
+      mb: 2,
+    },
+    links: {
+      p: 1,
+      fontWeight: 'light',
+      color: 'white',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
+  },
+};
 
 /**
  * Description of Menu component.
  */
 export default function Menu({ links, title, variant, linkDirection }) {
   return (
-    <Box variant={variant + '.box'}>
-      <Heading variant={variant + '.heading'}>{title}</Heading>
-      <Flex as="nav" flexDirection={linkDirection} role="navigation">
+    <Box sx={styles[variant].box}>
+      <Heading sx={styles[variant].heading}>{title}</Heading>
+      <Flex as="nav" sx={{ flexDirection: linkDirection }} role="navigation">
         {links.map((link) => (
-          <BaseLink url={link.url} variant={variant + '.links'}>
+          <BaseLink url={link.url} sx={styles[variant].links}>
             {link.title}
           </BaseLink>
         ))}
