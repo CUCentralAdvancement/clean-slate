@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'rebass';
+import { Box } from 'theme-ui';
 import SearchResults from './SearchResults';
 import { searchData } from './results.js';
 

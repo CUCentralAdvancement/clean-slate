@@ -28,6 +28,7 @@ export const theme = {
     heading: 1.25,
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  breakpoints: ['40em', '56em', '64em'],
   sizes: {
     avatar: 48,
   },
@@ -56,18 +57,21 @@ export const theme = {
       letterSpacing: '0.1em',
     },
   },
+  cards: {
+    primary: {
+      p: 2,
+      bg: 'background',
+      boxShadow: 'card',
+      border: '1px solid #ccc',
+    },
+  },
   variants: {
     avatar: {
       width: 'avatar',
       height: 'avatar',
       borderRadius: 'circle',
     },
-    card: {
-      p: 2,
-      bg: 'background',
-      boxShadow: 'card',
-      border: '1px solid #ccc',
-    },
+
     link: {
       color: 'primary',
     },
@@ -112,26 +116,6 @@ export const theme = {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
-    },
-  },
-  menu: {
-    bgDark: {
-      box: {
-        p: 3,
-        color: 'white',
-      },
-      heading: {
-        mb: 2,
-      },
-      links: {
-        p: 1,
-        fontWeight: 'light',
-        color: 'white',
-        textDecoration: 'none',
-        ':hover': {
-          textDecoration: 'underline',
-        },
-      },
     },
   },
 };

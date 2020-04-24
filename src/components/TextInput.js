@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useField } from 'formik';
-import { Input, Label } from '@rebass/forms';
-import { Text } from 'rebass';
-
-import { theme } from '../theme';
+import { Input, Label, Text } from 'theme-ui';
 
 export default function TextInput({ label, ...props }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -13,12 +10,7 @@ export default function TextInput({ label, ...props }) {
   return (
     <>
       <Label htmlFor={props.id || props.name}>{label}</Label>
-      <Input
-        {...field}
-        {...props}
-        color={meta.touched && meta.error ? theme.colors.error : 'inherit'}
-        bg="background"
-      />
+      <Input {...field} {...props} color={meta.touched && meta.error ? 'colors.error' : 'inherit'} bg="background" />
       {meta.touched && meta.error ? (
         <Text mt={1} ml={2} color="error">
           {meta.error}

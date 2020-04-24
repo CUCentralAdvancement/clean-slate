@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Card, Text, Flex, Heading, Link, Box } from 'rebass';
+import { Card, Text, Flex, Heading, Link, Box, Grid } from 'theme-ui';
 
 function Header({ results }) {
   return (
@@ -31,8 +31,8 @@ function Header({ results }) {
 function FeaturedFund({ headerColors, res }) {
   return (
     <Box bg="black" mr={-2} my={2}>
-      <Flex flexDirection="row">
-        <Box height="100%">
+      <Flex sx={{ flexDirection: 'row' }}>
+        <Box sx={{ height: '100%' }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -77,28 +77,24 @@ export default function SearchResults({ results, ...props }) {
       <Box p={3}>
         <Header results={results} />
       </Box>
-      <Flex p={2} flexWrap="wrap" mx="auto">
+      <Grid gap={3} columns={[1, 2, 3, 4]}>
         {results.map((res, index) => (
-          <Card key={res.id.toString()} width={['100%', '47%', '31%', '23%']} m={2}>
+          <Card key={res.id.toString()}>
             <Link sx={{ textDecoration: 'none' }} color="text" href="#">
-              <Flex flexDirection="column" minHeight={231}>
+              <Flex sx={{ flexDirection: 'column', minHeight: 231 }}>
                 <Box bg={headerColors[res.campus]} mx={-2} mt={-2} color="background">
                   <Flex>
-                    <Text flexGrow={1} pl={3} pt={3} pb={3} fontSize={1}>
-                      {res.campus}
-                    </Text>
+                    <Text sx={{ flexGrow: 1, pl: 3, pt: 3, pb: 3, fontSize: 1 }}>{res.campus}</Text>
                     {res.featured == true && <FeaturedFund headerColors={headerColors} res={res}></FeaturedFund>}
                   </Flex>
                 </Box>
-                <Heading mt={2} p={2} flexGrow={1} fontSize={3}>
-                  {res.title}
-                </Heading>
+                <Heading sx={{ mt: 2, p: 2, flexGrow: 1, fontSize: 3 }}>{res.title}</Heading>
                 <Text p={2}>{res.interest}</Text>
               </Flex>
             </Link>
           </Card>
         ))}
-      </Flex>
+      </Grid>
     </>
   );
 }

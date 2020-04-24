@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from 'rebass';
+import { Button } from 'theme-ui';
 
 /**
  * Description of button component.
