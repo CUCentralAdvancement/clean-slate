@@ -12,7 +12,7 @@ const PaddedText = ({ children }) => <Text sx={{ pl: [1, 0], pb: 1 }}>{children}
 
 export const fourColumns = () => (
   <Box bg="#000" p={3}>
-    <Grid gap={2} columns={[1, null, 4]}>
+    <Grid gap={2} columns={[1, 2, 4]}>
       <Flex sx={{ py: 2, pl: [3, 0], flexDirection: 'column' }} color="#fff" fontWeight="light">
         <LinkButton variant="primary" sx={{ px: 4, color: 'text', fontSize: 3, mb: 2, fontWeight: 300 }}>
           Give Now
