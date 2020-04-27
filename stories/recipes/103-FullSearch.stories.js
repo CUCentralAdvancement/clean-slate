@@ -48,7 +48,7 @@ export const fullSearch = () => {
           <SearchForm submitHandler={submitHandler} resetHandler={() => setResults(realSearchData)} />
         </Box>
       </Flex>
-      <Box sx={{ maxWidth: 1280, mx: 'auto' }}>
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: 2 }}>
         <SearchResults results={results} />
       </Box>
     </>

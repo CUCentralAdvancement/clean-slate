@@ -5,27 +5,6 @@ import { Flex, Heading, Box } from 'theme-ui';
 
 import BaseLink from './BaseLink';
 
-const styles = {
-  bgDark: {
-    box: {
-      p: 3,
-      color: 'white',
-    },
-    heading: {
-      mb: 2,
-    },
-    links: {
-      p: 1,
-      fontWeight: 'light',
-      color: 'white',
-      textDecoration: 'none',
-      ':hover': {
-        textDecoration: 'underline',
-      },
-    },
-  },
-};
-
 /**
  * Description of Menu component.
  */
@@ -58,4 +37,25 @@ Menu.propTypes = {
 Menu.defaultProps = {
   title: 'Menu',
   links: [{}],
+};
+
+export const variants = {
+  bgDark: {
+    box: {
+      p: 3,
+      color: 'white',
+    },
+    heading: {
+      mb: 2,
+    },
+    links: {
+      p: 1,
+      fontWeight: 'light',
+      color: 'white',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
+  },
 };
