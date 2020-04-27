@@ -22,17 +22,19 @@ export default {
 export const fullSearch = () => {
   const [results, setResults] = useState(realSearchData);
   function submitHandler(values) {
+    console.log(values);
     const newResults = realSearchData.filter((res) => {
-      if (values.campus !== 'All') {
+      if (typeof values.campus !== 'undefined') {
         return res.field_campuses_tid === values.campus;
       }
-      if (values.interest !== 'All') {
+      if (typeof values.interest !== 'undefined') {
         return res.field_fund_interests_tid === values.interest;
       }
-      if (values.fundType !== 'All') {
+      if (typeof values.fundType !== 'undefined') {
         return res.field_fund_type_tid === values.fundType;
       }
       if (values.search !== '') {
+        console.log(res.title, values.search);
         return res.title.toLowerCase().includes(values.search.toLowerCase());
       }
       return true;
@@ -44,11 +46,11 @@ export const fullSearch = () => {
   return (
     <>
       <Flex bg="gray" p={3}>
-        <Box sx={{ maxWidth: 1280, mx: 'auto' }}>
+        <Box sx={{ width: ['95%', 960], mx: 'auto' }}>
           <SearchForm submitHandler={submitHandler} resetHandler={() => setResults(realSearchData)} />
         </Box>
       </Flex>
-      <Box sx={{ maxWidth: 1280, mx: 'auto', px: 2 }}>
+      <Box sx={{ maxWidth: 960, mx: 'auto', px: 2 }}>
         <SearchResults results={results} />
       </Box>
     </>

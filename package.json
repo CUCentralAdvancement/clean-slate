@@ -1,6 +1,6 @@
 {
   "name": "@cu-advancement/component-library",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Component library for the Office of Advancement at CU",
   "author": "CU Advancement",
   "homepage": "https://gitlab.com/cu-advancement/clean-slate#readme",
@@ -55,14 +55,13 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
     "babel-loader": "^8.1.0",
-    "formik": "^2.1.4",
     "netlify-cli": "^2.40.0",
     "nwb": "0.24.x",
     "prettier": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "webpack-bundle-analyzer": "^3.7.0",
-    "yup": "^0.28.3"
+    "react-hook-form": "^5.6.0",
+    "webpack-bundle-analyzer": "^3.7.0"
   }
 }
