@@ -9,8 +9,8 @@ import SelectInput from '../../src/components/SelectInput';
 export default function SearchForm({ submitHandler, resetHandler }) {
   const { register, handleSubmit, setValue } = useForm();
   const [campus, setCampus] = useState({ value: 'All', label: 'All Campuses' });
-  const [interest, setInterest] = useState({ value: 'All', label: 'All Campuses' });
-  const [fundType, setFundType] = useState({ value: 'All', label: 'All Campuses' });
+  const [interest, setInterest] = useState({ value: 'All', label: 'All Interests' });
+  const [fundType, setFundType] = useState({ value: 'All', label: 'Fund Type' });
 
   useEffect(() => {
     register({ name: 'campus' });
