@@ -6,7 +6,12 @@ export default function TextInput({ label, error, ...props }) {
   return (
     <Box>
       {label && <Label htmlFor={props.id || props.name}>{label}</Label>}
-      <Input {...props} type="text" color={error !== '' ? 'colors.error' : 'inherit'} bg="background" />
+      <Input
+        {...props}
+        type="text"
+        color={error !== '' ? 'colors.error' : 'inherit'}
+        sx={{ bg: 'background', borderColor: 'rgb(204, 204, 204)', borderRadius: 0 }}
+      />
     </Box>
   );
 }

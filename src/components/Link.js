@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Link } from 'theme-ui';
+import { Link as BaseLink } from 'theme-ui';
 
 /**
- * Description of BaseLink component.
+ * Description of Link component.
  */
-export default function BaseLink({ children, url, isExternal, ...props }) {
+export default function Link({ children, url, isExternal, ...props }) {
   let styles = {};
 
   // if (isDisabled) {
@@ -15,13 +14,13 @@ export default function BaseLink({ children, url, isExternal, ...props }) {
   // }
 
   return (
-    <Link {...props} sx={(styles, { ...props.sx })} target={isExternal ? '_blank' : '_self'} href={url}>
+    <BaseLink {...props} sx={(styles, { ...props.sx })} target={isExternal ? '_blank' : '_self'} href={url}>
       {children}
-    </Link>
+    </BaseLink>
   );
 }
 
-BaseLink.propTypes = {
+Link.propTypes = {
   /**
    * URL visited when user clicks link.
    */
@@ -33,7 +32,7 @@ BaseLink.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-BaseLink.defaultProps = {
+Link.defaultProps = {
   url: '',
   target: '_self',
 };

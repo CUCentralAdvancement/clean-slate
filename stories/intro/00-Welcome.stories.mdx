@@ -1,5 +1,5 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import BaseButton from '../../src/components/BaseButton';
+import Button from '../../src/components/Button';
 
 <Meta title="Introduction/Welcome" />
 
@@ -46,10 +46,10 @@ scheme and one instance that uses the secondary color scheme and is marked as di
 ```jsx live=true
 <Preview>
   <Story name="all buttons">
-    <BaseButton variant="button.primary">Primary</BaseButton>
-    <BaseButton variant="button.secondary" isDisabled>
+    <Button variant="button.primary">Primary</Button>
+    <Button variant="button.secondary" isDisabled>
       Disabled
-    </BaseButton>
+    </Button>
   </Story>
 </Preview>
 ```

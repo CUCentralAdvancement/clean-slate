@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import BaseButton from './BaseButton';
-import BaseLink from './BaseLink';
+import Button from './Button';
+import Link from './Link';
 
 /**
  * Description of the LinkButton component.
  */
 export default function LinkButton({ children, url, isExternal, ...props }) {
   return (
-    <BaseLink href={url} isExternal={isExternal}>
-      <BaseButton {...props}>
+    <Link href={url} isExternal={isExternal}>
+      <Button {...props}>
         {children} {isExternal && <span>-></span>}
-      </BaseButton>
-    </BaseLink>
+      </Button>
+    </Link>
   );
 }
 

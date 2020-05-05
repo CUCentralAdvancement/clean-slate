@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from 'theme-ui';
+import { Button as BaseButton } from 'theme-ui';
 
 /**
  * Description of button component.
  */
-export default function BaseButton({ children, ...props }) {
+export default function Button({ children, ...props }) {
   let styles = props.sx ? props.sx : {};
 
   if (props.isDisabled) {
@@ -15,13 +15,13 @@ export default function BaseButton({ children, ...props }) {
   }
 
   return (
-    <Button {...props} sx={styles}>
+    <BaseButton {...props} sx={styles}>
       {children}
-    </Button>
+    </BaseButton>
   );
 }
 
-BaseButton.propTypes = {
+Button.propTypes = {
   /**
    * The name of the button.
    */
@@ -33,7 +33,7 @@ BaseButton.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-BaseButton.defaultProps = {
+Button.defaultProps = {
   name: 'a button',
   isDisabled: false,
 };
