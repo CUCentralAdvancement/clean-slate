@@ -1,12 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, Select, Box } from 'theme-ui';
+import { Label, Box } from 'theme-ui';
+import Select from 'react-select';
+
+const customStyles = {
+  indicatorsContainer: (provided, state) => ({
+    ...provided,
+    backgroundColor: '#000',
+  }),
+  indicatorSeparator: (provided, state) => ({
+    ...provided,
+    backgroundColor: 'inherit',
+  }),
+};
 
 export default function SelectInput({ label, error, ...props }) {
   return (
     <Box>
       {label && <Label htmlFor={props.id || props.name}>{label}</Label>}
-      <Select {...props} color={error ? 'colors.error' : 'inherit'} bg="background" />
+      <Select {...props} styles={customStyles} color={error ? 'colors.error' : 'inherit'} bg="background" />
     </Box>
   );
 }

@@ -1,37 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, Flex, Text, Grid, Heading } from 'theme-ui';
+import { Box, Divider, Text, Grid, Heading } from 'theme-ui';
 import Radio from '../../src/components/Radio';
 import BaseButton from '../../src/components/BaseButton';
 import TextInput from '../../src/components/TextInput';
 import SelectInput from '../../src/components/SelectInput';
+import Checkbox from '../../src/components/Checkbox';
 
 export default {
   title: 'Recipes/Contact Information',
 };
 
 export const ContactInformation = () => {
-  const { register, handleSubmit, setValue, watch } = useForm({
-    defaultValues: {
-      'individual-company': 'true',
-    },
-  });
+  const [title, setTitle] = useState('');
+  const [addressType, setAddressType] = useState('');
+  const [includeSpouse, setIncludeSpouse] = useState(false);
+  const { register, handleSubmit, setValue, watch } = useForm();
+
+  const addressTypeOptions = [
+    { value: 'home', label: 'Home' },
+    { value: 'work', label: 'Work' },
+    { value: 'other', label: 'Other' },
+  ];
+
+  const titleOptions = [
+    { value: 'mr', label: 'Mr.' },
+    { value: 'mrs', label: 'Mrs.' },
+    { value: 'other', label: "Don't put me in a box!" },
+  ];
 
   function submitHandler(data) {
     alert(JSON.stringify(data));
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     register({ name: 'individual-company' });
     register({ name: 'companyName' });
+    register({ name: 'title' });
+    register({ name: 'firstName' });
+    register({ name: 'lastName' });
+    register({ name: 'addressType' });
+    register({ name: 'includeSpouse' });
+    register({ name: 'spouseName' });
   }, [register]);
 
   const type = watch('individual-company');
-
-  const handleSelect = (e, name) => {
-    setValue(name, e.target.value);
-    console.log(name, e.target.value);
-  };
 
   return (
     <Box sx={{ bg: '#EBEDED', maxWidth: 960, mx: 'auto', p: 4 }}>
@@ -49,14 +62,15 @@ export const ContactInformation = () => {
                 label="Individual"
                 value="individual"
                 defaultChecked={true}
-                onChange={(e) => handleSelect(e, 'individual-company')}
+                onChange={(e) => setValue('individual-company', e.target.value)}
+                sx={{ color: '#fff', bg: '#fff' }}
               />
-
               <Radio
                 name="individual-company"
                 label="Company/Organization"
                 value="company"
-                onChange={(e) => handleSelect(e, 'individual-company')}
+                onChange={(e) => setValue('individual-company', e.target.value)}
+                sx={{ color: '#fff', bg: '#fff' }}
               />
             </Grid>
 
@@ -64,19 +78,54 @@ export const ContactInformation = () => {
               <TextInput
                 name="companyName"
                 placeholder="Name of Organization or Company"
-                onChange={(e) => handleSelect(e, 'companyName')}
+                onChange={(e) => setValue('companyName', e.target.value)}
               />
             )}
           </Box>
-          <Grid gap={2} columns={[1, 2, 3]} sx={{}}>
-            <SelectInput name="title" label="Title" onChange={(e) => handleSelect(e, 'campus')}>
-              <option value="mr">Mr.</option>
-              <option value="mrs">Mrs.</option>
-              <option value="other">Don't put me in a box!</option>
-            </SelectInput>
+          <Grid gap={2} columns={[1, 2, 3]}>
+            <Box sx={{ mt: 1 }}>
+              <SelectInput
+                name="title"
+                label="Title"
+                value={title}
+                options={titleOptions}
+                onChange={(selectedOption) => {
+                  setValue('title', selectedOption.value);
+                  setTitle(selectedOption);
+                }}
+              />
+            </Box>
             <TextInput name="firstName" label="First Name" onChange={(e) => setValue('firstName', e.target.value)} />
             <TextInput name="lastName" label="Last Name" onChange={(e) => setValue('lastName', e.target.value)} />
           </Grid>
+          <SelectInput
+            name="addressType"
+            label="Address Type"
+            value={addressType}
+            options={addressTypeOptions}
+            onChange={(selectedOption) => {
+              setValue('addressType', selectedOption.value);
+              setAddressType(selectedOption);
+            }}
+          />
+          <Divider />
+          <Checkbox
+            name="includeSpouse"
+            label="Include Spouse/Partner in your gift?"
+            checked={includeSpouse}
+            onChange={(e) => {
+              setValue('includeSpouse', !includeSpouse);
+              setIncludeSpouse(!includeSpouse);
+            }}
+            sx={{ color: '#fff', bg: '#fff' }}
+          />
+          {includeSpouse && (
+            <TextInput
+              name="spouseName"
+              placeholder="Full name of spouse/partner"
+              onChange={(e) => setValue('spouseName', e.target.value)}
+            />
+          )}
           <BaseButton variant="button.secondary" type="submit" sx={{ maxWidth: ['100%', '25%'] }}>
             Continue to next step
           </BaseButton>

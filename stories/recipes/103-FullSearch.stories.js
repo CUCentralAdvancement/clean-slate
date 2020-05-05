@@ -34,7 +34,6 @@ export const fullSearch = () => {
         return res.field_fund_type_tid === values.fundType;
       }
       if (values.search !== '') {
-        console.log(res.title, values.search);
         return res.title.toLowerCase().includes(values.search.toLowerCase());
       }
       return true;
