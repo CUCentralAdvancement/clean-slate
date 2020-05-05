@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Flex, Heading, Box } from 'theme-ui';
-
-import BaseLink from './BaseLink';
+import Link from './Link';
 
 /**
  * Description of Menu component.
@@ -14,9 +12,9 @@ export default function Menu({ links, title, variant, linkDirection }) {
       <Heading sx={styles[variant].heading}>{title}</Heading>
       <Flex as="nav" sx={{ flexDirection: linkDirection }} role="navigation">
         {links.map((link) => (
-          <BaseLink url={link.url} sx={styles[variant].links}>
+          <Link url={link.url} sx={styles[variant].links}>
             {link.title}
-          </BaseLink>
+          </Link>
         ))}
       </Flex>
     </Box>
@@ -39,7 +37,7 @@ Menu.defaultProps = {
   links: [{}],
 };
 
-export const variants = {
+export const styles = {
   bgDark: {
     box: {
       p: 3,

@@ -1,7 +1,4 @@
 import React from 'react';
-import { text, select, number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-
 import { Box, Heading } from 'theme-ui';
 import Menu from '../../src/components/Menu';
 

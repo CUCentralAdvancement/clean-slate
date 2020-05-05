@@ -3,14 +3,14 @@ import { Flex, Box } from 'theme-ui';
 import { useForm } from 'react-hook-form';
 
 import TextInput from '../../src/components/TextInput';
-import BaseButton from '../../src/components/BaseButton';
+import Button from '../../src/components/Button';
 import SelectInput from '../../src/components/SelectInput';
 
 export default function SearchForm({ submitHandler, resetHandler }) {
   const { register, handleSubmit, setValue } = useForm();
   const [campus, setCampus] = useState({ value: 'All', label: 'All Campuses' });
-  const [interest, setInterest] = useState({ value: 'All', label: 'All Campuses' });
-  const [fundType, setFundType] = useState({ value: 'All', label: 'All Campuses' });
+  const [interest, setInterest] = useState({ value: 'All', label: 'All Interests' });
+  const [fundType, setFundType] = useState({ value: 'All', label: 'Fund Type' });
 
   useEffect(() => {
     register({ name: 'campus' });
@@ -96,10 +96,10 @@ export default function SearchForm({ submitHandler, resetHandler }) {
             />
           </Box>
           <Box sx={{ width: ['100%', '30%'], px: 2, pt: [2, 0, 0] }}>
-            <BaseButton variant="button.secondary" type="submit" mr={2}>
+            <Button variant="button.secondary" type="submit" mr={2}>
               Search
-            </BaseButton>
-            <BaseButton
+            </Button>
+            <Button
               variant="button.secondary"
               type="reset"
               onClick={() => {
@@ -107,7 +107,7 @@ export default function SearchForm({ submitHandler, resetHandler }) {
               }}
             >
               Reset
-            </BaseButton>
+            </Button>
           </Box>
         </Flex>
       </form>

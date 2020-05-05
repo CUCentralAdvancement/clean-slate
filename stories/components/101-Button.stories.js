@@ -2,7 +2,7 @@ import React from 'react';
 import { text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import BaseButton from '../../src/components/BaseButton';
+import BaseButton from '../../src/components/Button';
 import ActionButton from '../../src/components/ActionButton';
 import LinkButton from '../../src/components/LinkButton';
 

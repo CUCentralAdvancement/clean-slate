@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BaseButton from './BaseButton';
+import Button from './Button';
 
 /**
  * Description of the action button component.
  */
 export default function ActionButton({ children, handleClick, ...props }) {
   return (
-    <BaseButton {...props} onClick={handleClick}>
+    <Button {...props} onClick={handleClick}>
       {children}
-    </BaseButton>
+    </Button>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Box, Divider, Text, Grid, Heading } from 'theme-ui';
 import Radio from '../../src/components/Radio';
-import BaseButton from '../../src/components/BaseButton';
+import Button from '../../src/components/Button';
 import TextInput from '../../src/components/TextInput';
 import SelectInput from '../../src/components/SelectInput';
 import Checkbox from '../../src/components/Checkbox';
@@ -126,9 +126,9 @@ export const ContactInformation = () => {
               onChange={(e) => setValue('spouseName', e.target.value)}
             />
           )}
-          <BaseButton variant="button.secondary" type="submit" sx={{ maxWidth: ['100%', '25%'] }}>
+          <Button variant="button.secondary" type="submit" sx={{ maxWidth: ['100%', '25%'] }}>
             Continue to next step
-          </BaseButton>
+          </Button>
         </Grid>
       </form>
     </Box>
