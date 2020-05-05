@@ -56,6 +56,9 @@ export const theme = {
       textTransform: 'uppercase',
       letterSpacing: '0.1em',
     },
+    italic: {
+      'font-style': 'italic',
+    },
   },
   cards: {
     primary: {

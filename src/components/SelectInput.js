@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label } from 'theme-ui';
+import { Label, Box } from 'theme-ui';
 import Select from 'react-select';
 
 const customStyles = {
@@ -16,10 +16,10 @@ const customStyles = {
 
 export default function SelectInput({ label, error, ...props }) {
   return (
-    <>
+    <Box>
       {label && <Label htmlFor={props.id || props.name}>{label}</Label>}
       <Select {...props} styles={customStyles} color={error ? 'colors.error' : 'inherit'} bg="background" />
-    </>
+    </Box>
   );
 }
 
