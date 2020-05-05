@@ -11,7 +11,9 @@ export default {
 };
 
 export const searchForm = () => (
-  <Flex sx={{ bg: 'gray', p: 3, justifyContent: 'center' }}>
-    <SearchForm submitHandler={action('Searched')} />
+  <Flex sx={{ bg: 'gray', p: 3 }}>
+    <Box sx={{ width: ['95%', 960], mx: 'auto' }}>
+      <SearchForm submitHandler={action('Searched')} />
+    </Box>
   </Flex>
 );
