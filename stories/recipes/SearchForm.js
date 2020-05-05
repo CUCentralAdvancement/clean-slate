@@ -7,13 +7,6 @@ import BaseButton from '../../src/components/BaseButton';
 import SelectInput from '../../src/components/SelectInput';
 
 export default function SearchForm({ submitHandler, resetHandler }) {
-  // validationSchema={Yup.object({
-  //   search: Yup.string()
-  //     .min(3, 'Search query must be at least 3 characters long')
-  //     .required('Search query is required'),
-  // })}
-  // register({ required: true, maxLength: 20 })
-
   const { register, handleSubmit, setValue } = useForm();
 
   React.useEffect(() => {
@@ -25,12 +18,10 @@ export default function SearchForm({ submitHandler, resetHandler }) {
 
   const handleSelect = (e, name) => {
     setValue(name, e.target.value);
-    // console.log(name, e.target.value);
   };
 
   const handleTextInput = (e, name) => {
     setValue(name, e.target.value);
-    // console.log(name, option);
   };
 
   return (

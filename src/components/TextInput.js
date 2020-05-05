@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Label, Text } from 'theme-ui';
+import { Input, Label, Text, Box } from 'theme-ui';
 
 export default function TextInput({ label, error, ...props }) {
   return (
-    <>
+    <Box>
       {label && <Label htmlFor={props.id || props.name}>{label}</Label>}
-      <Input {...props} color={error !== '' ? 'colors.error' : 'inherit'} bg="background" />
-    </>
+      <Input {...props} type="text" color={error !== '' ? 'colors.error' : 'inherit'} bg="background" />
+    </Box>
   );
 }
 

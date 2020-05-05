@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, Select } from 'theme-ui';
+import { Label, Select, Box } from 'theme-ui';
 
 export default function SelectInput({ label, error, ...props }) {
   return (
-    <>
+    <Box>
       {label && <Label htmlFor={props.id || props.name}>{label}</Label>}
       <Select {...props} color={error ? 'colors.error' : 'inherit'} bg="background" />
-    </>
+    </Box>
   );
 }
 
