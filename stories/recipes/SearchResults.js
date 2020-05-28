@@ -30,13 +30,13 @@ function Header({ results }) {
 
 function FeaturedFund({ headerColors, res }) {
   return (
-    <Box bg="black" mr={-2} my={2}>
+    <Box bg="black" sx={{ mr: -2, my: 2, height: '38px' }}>
       <Flex sx={{ flexDirection: 'row' }}>
-        <Box sx={{ height: '100%' }}>
+        <Box>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="30"
+            width="15"
+            height="34"
             viewBox="0 0 14 71"
             style={{ marginLeft: '-5px' }}
           >
@@ -77,7 +77,7 @@ export default function SearchResults({ results, ...props }) {
       <Box p={3}>
         <Header results={results} />
       </Box>
-      <Grid gap={3} columns={[1, 2, 3, 4]}>
+      <Grid gap={'16px'} columns={[1, 2, 3, 4]}>
         {results.map((res, index) => (
           <Card key={res.id.toString()}>
             <Link sx={{ textDecoration: 'none' }} color="text" href="#">
