@@ -6,6 +6,7 @@ export const theme = {
     secondary: '#000000',
     muted: '#f6f6f9',
     gray: '#dddddf',
+    lightGray: '#FEFEFE',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     error: 'red',
     link: '#298FCE',

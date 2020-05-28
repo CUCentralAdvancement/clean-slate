@@ -12,6 +12,15 @@ export default function SearchForm({ submitHandler, resetHandler }) {
   const [interest, setInterest] = useState({ value: 'All', label: 'All Interests' });
   const [fundType, setFundType] = useState({ value: 'All', label: 'Fund Type' });
 
+  const resetSelects = () => {
+    setFundType({ value: 'All', label: 'Fund Type' });
+    setValue('fundType', 'All');
+    setInterest({ value: 'All', label: 'All Interests' });
+    setValue('interest', 'All');
+    setCampus({ value: 'All', label: 'All Campuses' });
+    setValue('campus', 'All');
+  };
+
   useEffect(() => {
     register({ name: 'campus' });
     register({ name: 'interest' });
@@ -31,13 +40,13 @@ export default function SearchForm({ submitHandler, resetHandler }) {
   const interestsOptions = [
     { value: 'All', label: 'All Interests' },
     { value: '950', label: 'Alumni Programs' },
-    { value: '917', label: 'Arts &amp; Culture' },
-    { value: '953', label: 'Athletics &amp; Recreation' },
-    { value: '958', label: 'Community &amp; Society' },
-    { value: '983', label: 'Enterprise &amp; Entrepreneurship' },
-    { value: '971', label: 'Health &amp; Wellness' },
-    { value: '907', label: 'Scholarships &amp; Student Success' },
-    { value: '910', label: 'Science, Research &amp; Innovation' },
+    { value: '917', label: 'Arts & Culture' },
+    { value: '953', label: 'Athletics & Recreation' },
+    { value: '958', label: 'Community & Society' },
+    { value: '983', label: 'Enterprise & Entrepreneurship' },
+    { value: '971', label: 'Health & Wellness' },
+    { value: '907', label: 'Scholarships & Student Success' },
+    { value: '910', label: 'Science, Research & Innovation' },
   ];
 
   const fundTypeOptions = [
@@ -104,6 +113,7 @@ export default function SearchForm({ submitHandler, resetHandler }) {
               type="reset"
               onClick={() => {
                 resetHandler();
+                resetSelects();
               }}
             >
               Reset
