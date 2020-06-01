@@ -1,7 +1,8 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import Button from '../../src/components/Button';
+import Button from '../src/components/Button';
+import { Box } from 'theme-ui';
 
-<Meta title="Introduction/Welcome" />
+<Meta title="An Introduction" />
 
 # Office of Advancement Component Library
 
@@ -43,25 +44,27 @@ with Component-driven Design since you build up from the smallest components/ato
 Here is how you would add a preview of the Button component to a MDX document with one instance that uses the primary color branding
 scheme and one instance that uses the secondary color scheme and is marked as disabled.
 
-```jsx live=true
 <Preview>
   <Story name="all buttons">
-    <Button variant="button.primary">Primary</Button>
-    <Button variant="button.secondary" isDisabled>
-      Disabled
-    </Button>
+    <Box>
+      <Button variant="primary" sx={{ mr: 2 }}>
+        Primary
+      </Button>
+      <Button variant="button.secondary" isDisabled>
+        Disabled
+      </Button>
+    </Box>
   </Story>
 </Preview>
-```
 
 And here is how the story gets rendered into the actual buttons displaying the same component but in different states.
 
-<Preview>
-  <BaseButton variant="button.primary">Primary</BaseButton>
-  <BaseButton variant="secondary.secondary" isDisabled>
+<Box sx={{ width: '400px', mx: 'auto' }}>
+  <Button variant="button.primary">Primary</Button>
+  <Button variant="button.secondary" isDisabled>
     Disabled
-  </BaseButton>
-</Preview>
+  </Button>
+</Box>
 
 ## Addons
 

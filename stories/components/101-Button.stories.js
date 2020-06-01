@@ -6,6 +6,9 @@ import BaseButton from '../../src/components/Button';
 import ActionButton from '../../src/components/ActionButton';
 import LinkButton from '../../src/components/LinkButton';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/pro-regular-svg-icons';
+
 export default {
   title: 'Components/Button',
   component: Button,
@@ -47,8 +50,9 @@ export const actionButtons = () => (
 
 export const linkButtons = () => (
   <div>
-    <LinkButton url="https://www.google.com" isExternal={true}>
+    <LinkButton url="https://www.google.com" isExternal={true} icon={<FontAwesomeIcon icon={faExternalLinkAlt} />}>
       Google It
     </LinkButton>
+    <LinkButton url="https://www.google.com">Internal Link</LinkButton>
   </div>
 );

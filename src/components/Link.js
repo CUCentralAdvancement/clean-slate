@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as BaseLink } from 'theme-ui';
+import { Link as BaseLink, Box } from 'theme-ui';
 
 /**
  * Description of Link component.
  */
-export default function Link({ children, url, isExternal, ...props }) {
+export default function Link({ children, url, isExternal, icon, ...props }) {
   let styles = {};
 
   // if (isDisabled) {
@@ -15,7 +15,7 @@ export default function Link({ children, url, isExternal, ...props }) {
 
   return (
     <BaseLink {...props} sx={(styles, { ...props.sx })} target={isExternal ? '_blank' : '_self'} href={url}>
-      {children}
+      {children} {isExternal && <Box sx={{ ml: 1, display: 'inline' }}>{icon}</Box>}
     </BaseLink>
   );
 }
@@ -29,6 +29,7 @@ Link.propTypes = {
    * Target of link. Follows the HTML spec for target names.
    */
   target: PropTypes.string,
+  icon: PropTypes.ReactComponentLike,
   children: PropTypes.node.isRequired,
 };
 
