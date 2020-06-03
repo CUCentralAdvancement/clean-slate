@@ -1,0 +1,86 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import Link from '../../src/components/Link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/pro-regular-svg-icons';
+import { faFontAwesomeFlag } from '@fortawesome/free-brands-svg-icons';
+import { Flex, Text } from 'theme-ui';
+
+<Meta title="Components/Icons" />
+
+# Using Icons
+
+<Flex
+  sx={{
+    p: 4,
+    bg: '#000',
+    maxWidth: 300,
+    mx: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#CFB87C',
+    fontSize: 7,
+  }}
+>
+  <FontAwesomeIcon icon={faFontAwesomeFlag} /> <Text sx={{ ml: 3, fontSize: 4 }}>Font Awesome</Text>
+</Flex>
+
+CU Advancement has a license for the <Link url="https://fontawesome.com/pro" isExternal icon={<FontAwesomeIcon icon={faExternalLinkAlt} />}> pro version of Font Awesome </Link>.
+Font Awesome has a large libaray of thousands of icons rendered as SVGs that come in four different styles each.
+
+You'll notice the icon at the end of the link to Font Awesome's website.
+
+<Preview>
+  <Story name="external link icons">
+    <Link url="https://fontawesome.com/pro" isExternal icon={<FontAwesomeIcon icon={faExternalLinkAlt} />}>
+      pro version of Font Awesome
+    </Link>
+  </Story>
+</Preview>
+
+The `faExternalLinkAlt` icon is passed into a `<FontAwesomeIcon />` component. Since the icon is from the `@fortawesome/pro-regular-svg-icons` library, it
+needs to have an auth token associated with it in order to install that library in an application.
+
+For licensing reasons, this component library can't make it as easy as writing `<Icon name="faExternalLinkAlt"/>` in the code. There needs to be more initial configuration.
+
+## Adding Font Awesome To A Project
+
+Font Awesome has a couple of core dependencies and then several icon packages you can use based on your icon needs per project. In an existing React-based project, you'll always need
+to add the following packages.
+
+```
+yarn add @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome
+```
+
+Now, you'll be able to use the `<FontAwesomeIcon />` component in code, but you'll need to install extra packages to import actual icons. Some packages are free and open to use.
+for any application.
+
+```
+# Add basic icons.
+yarn add @fortawesome/free-solid-svg-icons
+
+# Or add branded icons.
+yarn add @fortawesome/free-brands-svg-icons
+```
+
+### Using Pro Version Icons
+
+Other icons require a Font Awesome Pro license to use. If you have a pro license, you can add a couple dependencies and an `.npmrc` file to the root of your project in order
+to use icons from the pro license set.
+
+```bash
+yarn add @fortawesome/fontawesome-pro @fortawesome/pro-regular-svg-icons
+```
+
+The node package managager, npm, then has to use an authorization token to check that the pro icon library can be downloaded.
+
+```js
+// In .npmrc
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}
+```
+
+You'll have to export the token into your `$PATH`. npm checks for the token every time you run a command so I suggest adding the token to your `.bashrc` or `.zshrc` files.
+
+```bash
+export FONTAWESOME_NPM_AUTH_TOKEN="12345678"
+```
