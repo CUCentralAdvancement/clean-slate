@@ -5,7 +5,7 @@ import { Link as BaseLink, Box } from 'theme-ui';
 /**
  * Description of Link component.
  */
-export default function Link({ children, url, isExternal, icon, ...props }) {
+export default function Link({ children, url, isExternal, ...props }) {
   let styles = {};
 
   // if (isDisabled) {
@@ -15,7 +15,7 @@ export default function Link({ children, url, isExternal, icon, ...props }) {
 
   return (
     <BaseLink {...props} sx={(styles, { ...props.sx })} target={isExternal ? '_blank' : '_self'} href={url}>
-      {children} {isExternal && <Box sx={{ ml: 1, display: 'inline' }}>{icon}</Box>}
+      {children}
     </BaseLink>
   );
 }
@@ -29,7 +29,6 @@ Link.propTypes = {
    * Target of link. Follows the HTML spec for target names.
    */
   target: PropTypes.string,
-  icon: PropTypes.ReactComponentLike,
   children: PropTypes.node.isRequired,
 };
 
