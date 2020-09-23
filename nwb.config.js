@@ -5,12 +5,15 @@ let config = {
   type: 'react-component',
   npm: {
     esModules: true,
-    // umd: {
-    //   global: 'ColUniv',
-    //   externals: {
-    //     react: 'React',
-    //   },
-    // },
+    umd: {
+      global: 'ColUniv',
+      entry: './umd.js',
+      externals: {
+        react: 'React',
+        // 'react-select': 'ReactSelect',
+        // 'theme-ui': 'ThemeUI',
+      },
+    },
   },
   webpack: {
     extra: {
