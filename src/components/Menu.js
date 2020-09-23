@@ -56,4 +56,22 @@ export const styles = {
       },
     },
   },
+  bgLight: {
+    box: {
+      p: 3,
+      color: 'black',
+    },
+    heading: {
+      mb: 2,
+    },
+    links: {
+      p: 1,
+      fontWeight: 'light',
+      color: 'black',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
+  },
 };
