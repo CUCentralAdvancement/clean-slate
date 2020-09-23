@@ -11,8 +11,8 @@ export default function Menu({ links, title, variant, linkDirection }) {
     <Box sx={styles[variant].box}>
       <Heading sx={styles[variant].heading}>{title}</Heading>
       <Flex as="nav" sx={{ flexDirection: linkDirection }} role="navigation">
-        {links.map((link) => (
-          <Link url={link.url} sx={styles[variant].links}>
+        {links.map((link, index) => (
+          <Link url={link.url} sx={styles[variant].links} key={index}>
             {link.title}
           </Link>
         ))}
