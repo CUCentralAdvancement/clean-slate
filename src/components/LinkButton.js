@@ -7,12 +7,10 @@ import Link from './Link';
 /**
  * Description of the LinkButton component.
  */
-export default function LinkButton({ children, url, isExternal, icon, ...props }) {
+export default function LinkButton({ children, url, isExternal, ...props }) {
   return (
     <Link href={url} isExternal={isExternal}>
-      <Button {...props}>
-        {children} {isExternal && <Box sx={{ ml: 2, display: 'inline' }}>{icon}</Box>}
-      </Button>
+      <Button {...props}>{children}</Button>
     </Link>
   );
 }
@@ -26,7 +24,6 @@ LinkButton.propTypes = {
    * Places an icon next to the button text letting users know the link is external.
    */
   isExternal: PropTypes.bool,
-  icon: PropTypes.ReactComponentLike,
   children: PropTypes.node.isRequired,
 };
 
