@@ -14,7 +14,11 @@ export const fourColumnsDark = () => (
   <Box bg="#000" p={3}>
     <Grid gap={2} columns={[1, 2, 4]}>
       <Flex sx={{ py: 2, pl: [3, 0], flexDirection: 'column' }} color="#fff" fontWeight="light">
-        <LinkButton variant="primary" sx={{ px: 4, color: 'text', fontSize: 3, mb: 2, fontWeight: 300 }}>
+        <LinkButton
+          url="https://www.google.com"
+          variant="primary"
+          sx={{ px: 4, color: 'text', fontSize: 3, mb: 2, fontWeight: 300 }}
+        >
           Give Now
         </LinkButton>
         <PaddedText>CU Advancement | CU Foundation</PaddedText>
@@ -41,7 +45,11 @@ export const fourColumnsLight = () => (
   <Box bg="#fff" p={3}>
     <Grid gap={2} columns={[1, 2, 4]}>
       <Flex sx={{ py: 2, pl: [3, 0], flexDirection: 'column' }} color="#000" fontWeight="light">
-        <LinkButton variant="primary" sx={{ px: 4, color: 'text', fontSize: 3, mb: 2, fontWeight: 300 }}>
+        <LinkButton
+          url="https://www.google.com"
+          variant="primary"
+          sx={{ px: 4, color: 'text', fontSize: 3, mb: 2, fontWeight: 300 }}
+        >
           Give Now
         </LinkButton>
         <PaddedText>CU Advancement | CU Foundation</PaddedText>

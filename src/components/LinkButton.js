@@ -9,7 +9,7 @@ import Link from './Link';
  */
 export default function LinkButton({ children, url, isExternal, ...props }) {
   return (
-    <Link href={url} isExternal={isExternal}>
+    <Link url={url} isExternal={isExternal}>
       <Button {...props}>{children}</Button>
     </Link>
   );
